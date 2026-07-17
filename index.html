@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工期規劃</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="工期規劃">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#37352f">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAEXklEQVR4nO3dP3IjRRjG4ZaLE1Dcg2iLm0DGFcgICTYk4wpkcBOXI9+D4goQuLS70srSSPOnv37neQ5g9/T8/G3b7fIeWgE/fPj+v95rYL7nl9dD7zV0WYCA96FH4Jt9QhHv21Zxr/pJRMwla8a9ygcWMlOsEfbT0h9QzEy1RiuLfYUImTmWmtaLTGgxM9dSDc36qhAya5gzrR+e0GJmLXPaeihoMbO2Rxu7O2gxs5VHWrsraDGztXubmxy0mOnlnvYmBS1mepva4M2gxUwVU1pc/OoberoatOlMNbeafDdoMVPVtTYdOYhyMWjTmerea/SroMXMKC616shBlJOgTWdGc96sCU0UQRPlU9COG4zqy3ZNaKIImihPrTluML5jwyY0UQRNFEET5eD8TBITmiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoInyTe8FTPXnL9/2XsIifv7j395LiFb+D82khHxO2OsofeRIjbm17GfrqWzQe3jhe3jGrZUMek8vek/PuoWSQcOjygW9x4m1x2deS7mgYQ5BE0XQRBE0UcoFvccbtD0+81rKBQ1zlAx6TxNrT8+6hZJBt7aPF72HZ9xa2aBby37hyc/WU/lfHz1KuU0T8rqGCRqmKH3kgHsJmiiCJoqgiSJoogiaKIImiqCJImiiDPOnwB713W+/9l5ChH8+/t57CZPEXn0LeR3Vw448coh5PdX3Ni7o6hueoPIeRwVdeaPTVN3rqKAhJuiqEyNZxT2PCRpaEzRhBE0UQRMlJujqN1iJKu55TNDQWljQFSdGqqp7HRV0a3U3OknlPY4LurXaGz666nsb++ujRxVvs0ZUPeSj+KDZl8gjB/slaKIImiiCJoqgiSJoogiaKIImiqCJEvGnwD789HfvJWzu5a8fey+hpKGvvvcY8jlhnxr2yCHmN/bh1JBBe4mn7MdnwwXt5V1mX94MFzRcM1TQptB19mewoOEWQRNF0EQRNFGGCtqt2HX2Z7Cg4ZbhgjaFLrMvb4YLujUv75z9+GzIoFvzEo/sw6mhf330aI83ZEK+LCJoOBr2yAGXCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImihPzy+vh96LgCU8v7weTGiiCJoogibKU2tvZ4/eC4E5jg2b0EQRNFE+Be3Ywai+bNeEJoqgiXIStGMHozlv1oQmyldBm9KM4lKrFye0qKnuvUYdOYjybtCmNFVda/PqhBY11dxq0pGDKDeDNqWpYkqLkya0qOltaoOTjxyippd72rvrDC1qtnZvc3d/UyhqtvJIaw/9lEPUrO3Rxh7+sZ2oWcucthaJ0v8XzhKWGJKLXKyY1sy1VEOLh2hac4+lh+HiV9+mNVOt0cqq8ZnWXLLm0Ntsmop737b6l7vL8UDc+9Dj+FnivCvwDBW+f/of8iMtN7pUOYcAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEu0lEQVR4nO3cu3EbVxiG4QOOKvC4D0UcdWJnbsGZQwcKnbkFZXYnHEbsw+MW5MADDUUCi13s5Vy+5ykAXOz+756DG0+lMZ8eP36tfQzs5+n55VT7GF6rejCGnVLqRnH4Hzb0TDk6hsP+mMFniaNC2P2PGHzW2DuE3R7c4LOlvULY/EENPnvaOoSHLR/M8LO3rWdsk5oMPjVssRqsXgEMP7VsMXurAjD81LZ2Bu8OwPDTijWzeFcAhp/W3DuTiwMw/LTqntlcFIDhp3VLZ3R2AIafXiyZ1VkBGH56M3dmbwZg+OnVnNnd9KsQ0JvJANz96d2tGb4agOFnFFOzbAtEtIsBuPszmmszbQUg2rsA3P0Z1aXZtgIQ7bsA3P0Z3dsZtwIQ7VsA7v6keD3rVgCiCYBoD6XY/pDnPPNWAKIJgGgCIJoAiHbyAphkVgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCI9qH2ASz15dcfah/CLn7589/ahxCpm/8MN+rgvyWEY3WxBUoZ/lKynmsLmg8gcSASn3MtTQeQPAjJz/1ITQcAe2s2AHdA5+AIzQYARxAA0QRANAEQTQBEazYAXwlwDo7QbABwhKYDSL4DJj/3IzUdQCmZg5D4nGtpPoBSsgYi6bm2oJvfA5yN+vUAg19HdwHAlrrYAsFeBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRAtO7+Oe4aP/7+W+1DGNo/n/+ofQiLRXwXyOAfq6cQht8CGf7j9XTOhw6gpwsxml7O/bAB9HIBRtbDNRg2AJhjyAB6uPOkaP1aDBkAzCUAogmAaAIgmgCINmQAPX0UP7rWr8WQAcBcwwbQ+p0nQQ/XYNgASunjAoyql3M/dACl9HMhRtLTOY/4PcBZ6x/L966nwT+LCgDeGn4LBFMEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEC04f457uPPf9c+hOqe//qp9iF0Y5jvAhn894Rw2xBbIMN/mfNyW/cBuMjTnJ9pXQfg4s7jPF3XdQCwVrcBuKst43xd1m0AsAUBEE0ARBMA0QRAtG4D8DH/Ms7XZd0GAFvoOgB3tXmcp+u6DqAUF/cW52da9wGU4iJf47zcNszvAc585G/wlxguAFhiiC0Q3EsARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEe3h6fjnVPgio4en55WQFIJoAiCYAogmAaA+l/P9ioPaBwJHOM28FIJoAiPYtANsgUryedSsA0b4LwCrA6N7OuBWAaO8CsAowqkuzbQUg2sUArAKM5tpMWwGIdjUAqwCjmJrlyRVABPTu1gzbAhHtZgBWAXo1Z3ZnrQAioDdzZ3b2FkgE9GLJrC56DSACWrd0Rhe/CBYBrbpnNu96F0gEtObembz7bVAR0Io1s7jqcwARUNvaGVz9QZgIqGWL2dt0eD89fvy65ePBJVvedDf9KoTVgL1tPWO7DazVgC3tdXPd/Y4tBNbYe1dx2JZFCCxx1Hb68D27EJhy9OvIqi9axUApdd88ae5dG1GMrbV3Cv8DXMQ9TYTU/RsAAAAASUVORK5CYII=">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIuW3peacn+imj+WKgyIsICJzaG9ydF9uYW1lIjogIuW3peacn+imj+WKgyIsICJzdGFydF91cmwiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmZmZmIiwgInRoZW1lX2NvbG9yIjogIiMzNzM1MmYiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FZQUFBQlMzR3dIQUFBRXUwbEVRVlI0bk8zY3UzRWJWeGlHNFFPT0t2QzREMFVjZFdKbmJzR1pRd2NLbmJrRlpYWW5IRWJzdytNVzVNQUREVVVDaTEzczVWeSs1eWtBWE96Kzc1NkRHMCtsTVo4ZVAzNnRmUXpzNStuNTVWVDdHRjZyZWpDR25WTHFSbkg0SHpiMFREazZoc1ArbU1GbmlhTkMyUDJQR0h6VzJEdUUzUjdjNExPbHZVTFkvRUVOUG52YU9vU0hMUi9NOExPM3JXZHNrNW9NUGpWc3NScXNYZ0VNUDdWc01YdXJBakQ4MUxaMkJ1OE93UERUaWpXemVGY0FocC9XM0R1VGl3TXcvTFRxbnRsY0ZJRGhwM1ZMWjNSMkFJYWZYaXlaMVZrQkdINTZNM2RtYndaZytPblZuTm5kOUtzUTBKdkpBTno5NmQydEdiNGFnT0ZuRkZPemJBdEV0SXNCdVBzem1tc3piUVVnMnJzQTNQMFoxYVhadGdJUTdic0EzUDBaM2RzWnR3SVE3VnNBN3Y2a2VEM3JWZ0NpQ1lCb0Q2WFkvcERuUFBOV0FLSUpnR2dDSUpvQWlIYnlBcGhrVmdDaUNZQm9BaUNhQUlnbUFLSUpnR2dDSUpvQWlDWUFvZ21BYUFJZ21nQ0lKZ0NpQ1lCb0FpQ2FBSWdtQUtJSmdHZ0NJSm9BaUNZQW9nbUFhQUlnbWdDSTlxSDJBU3oxNWRjZmFoL0NMbjc1ODkvYWh4Q3BtLzhNTityZ3Z5V0VZM1d4QlVvWi9sS3lubXNMbWc4Z2NTQVNuM010VFFlUVBBakp6LzFJVFFjQWUyczJBSGRBNStBSXpRWUFSeEFBMFFSQU5BRVFUUUJFYXpZQVh3bHdEbzdRYkFCd2hLWURTTDRESmovM0l6VWRRQ21aZzVENG5HdHBQb0JTc2dZaTZibTJvSnZmQTV5Tit2VUFnMTlIZHdIQWxycllBc0ZlQkVBMEFSQk5BRVFUQU5FRVFEUUJFRTBBUkJNQTBRUkF0TzcrT2U0YVAvNytXKzFER05vL24vK29mUWlMUlh3WHlPQWZxNmNRaHQ4Q0dmN2o5WFRPaHc2Z3B3c3htbDdPL2JBQjlISUJSdGJETlJnMkFKaGp5QUI2dVBPa2FQMWFEQmtBekNVQW9nbUFhQUlnbWdDSU5tUUFQWDBVUDdyV3I4V1FBY0Jjd3diUStwMG5RUS9YWU5nQVN1bmpBb3lxbDNNL2RBQ2w5SE1oUnRMVE9ZLzRQY0JaNngvTDk2Nm53VCtMQ2dEZUduNExCRk1FUURRQkVFMEFSQk1BMFFSQU5BRVFUUUJFRXdEUkJFQzA0ZjQ1N3VQUGY5YytoT3FlLy9xcDlpRjBZNWp2QWhuODk0UncyeEJiSU1OL21mTnlXL2NCdU1qVG5KOXBYUWZnNHM3alBGM1hkUUN3VnJjQnVLc3Q0M3hkMW0wQXNBVUJFRTBBUkJNQTBRUkF0RzREOERIL01zN1haZDBHQUZ2b09nQjN0WG1jcCt1NkRxQVVGL2NXNTJkYTl3R1U0aUpmNDd6Y05zenZBYzU4NUcvd2x4Z3VBRmhpaUMwUTNFc0FSQk1BMFFSQU5BRVFUUUJFRXdEUkJFQTBBUkJOQUVRVEFORUVRRFFCRUUwQVJCTUEwUVJBTkFFUVRRQkVlM2g2ZmpuVlBnaW80ZW41NVdRRklKb0FpQ1lBb2dtQWFBK2wvUDlpb1BhQndKSE9NMjhGSUpvQWlQWXRBTnNnVXJ5ZWRTc0EwYjRMd0NyQTZON091QldBYU84Q3NBb3dxa3V6YlFVZzJzVUFyQUtNNXRwTVd3R0lkalVBcXdDam1Kcmx5UlZBQlBUdTFnemJBaEh0WmdCV0FYbzFaM1puclFBaW9EZHpaM2IyRmtnRTlHTEpyQzU2RFNBQ1dyZDBSaGUvQ0JZQnJicG5OdTk2RjBnRXRPYmVtYno3YlZBUjBJbzFzN2pxY3dBUlVOdmFHVno5UVpnSXFHV0wyZHQwZUQ4OWZ2eTY1ZVBCSlZ2ZWREZjlLb1RWZ0wxdFBXTzdEYXpWZ0MzdGRYUGQvWTR0Qk5iWWUxZHgySlpGQ0N4eDFIYjY4RDI3RUpoeTlPdklxaTlheFVBcGRkODhhZTVkRzFHTXJiVjNDdjhEWE1ROVRZVFUvUnNBQUFBQVNVVk9SSzVDWUlJPSIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIn0sIHsic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBZ0FBQUFJQUNBWUFBQUQwZU5UNkFBQU9qVWxFUVZSNG5PM2NQM0xrVkJmR1lYbUtGVkRzdzVITE80R01MWkFSZmdFaEdWc2dnNTFRRTdFUGlpMzRDMXlOZThadXUvOUl1dWZjOTNsV29MNldkSDY2MHN6ZFFrbVBEL2RQbzQ4QllBMS9mZjc3YnZReDhKby95aUFHUE1BemdUQ0dSZCtCWVE5d0dWR3dQUXU4QVFNZllGMkNZSDBXZEFVR1BzQytCTUh0TE9DVkRIMkFHc1RBZFN6YUJReDlnTnJFd1BrczFBY01mWUNleE1EN0xNNEpCai9BSElUQTJ5ektFVU1mWUc1aTRJV0ZXQXgrZ0RSQ0lEd0FESDZBYk1raEVQbkREWDRBamlXR1FOUVBOdmdCZUU5U0NFVDhVSU1mZ0Vza2hNQ24wUWV3TmNNZmdFc2x6STVwQ3lmaGp3ZkE5bWJkRFpqdVJ4bjhBR3hodGhDWTZoV0E0US9BVm1hYk1WUFV6R3gvRkFCcW0yRTNvUDBPZ09FUHdONW1tRDJ0QTJDR1B3QUFQWFdmUVMyM01Mb3ZPZ0J6NmZoS29OME9nT0VQUURVZFoxT3JBT2k0d0FCazZEYWpXbXhaZEZ0VUFMSjFlQ1ZRZmdmQThBZWdtdzZ6cTNRQWRGaEFBSGhMOVJsV05nQ3FMeHdBZktUeUxDc1pBSlVYREFBdVVYV21sUXVBcWdzRkFOZXFPTnRLQlVERkJRS0FOVlNiY1dVQ29OckNBTURhS3MyNkVnRlFhVUVBWUV0Vlp0N3dBS2l5RUFDd2x3cXpiMmdBVkZnQUFCaGg5QXdjRmdDamZ6Z0FqRFp5Rmc0SkFNTWZBSjZObW9tN0I0RGhEd0JmR2pFYmR3MEF3eDhBM3JiM2pOd3RBQXgvQUhqZm5yTnlsd0F3L0FIZ1BIdk56T0gvRHdBQXNML05BOERUUHdCY1pvL1p1V2tBR1A0QWNKMnRaK2htQVdENEE4QnR0cHlsdmdFQWdFQ2JCSUNuZndCWXgxWXpkZlVBTVB3QllGMWJ6TlpWQThEd0I0QnRyRDFqZlFNQUFJRldDd0JQL3dDd3JUVm43U29CWVBnRHdEN1dtcmxlQVFCQW9Kc0R3Tk0vQU94cmpkbHJCd0FBQXQwVUFKNytBV0NNVzJmdzFRRmcrQVBBV0xmTVlxOEFBQ0RRVlFIZzZSOEFhcmgySnRzQkFJQkFGd2VBcDM4QXFPV2EyV3dIQUFBQ1hSUUFudjRCb0taTFo3UWRBQUFJZEhZQWVQb0hnTm91bWRWMkFBQWcwRmtCNE9rZkFIbzRkMmJiQVFDQVFBSUFBQUo5R0FDMi93R2dsM05tdHgwQUFBajBiZ0I0K2dlQW5qNmE0WFlBQUNDUUFBQ0FRQ2NEd1BZL0FQVDIzaXkzQXdBQWdRUUFBQVI2TXdCcy93UEFIRTdOZERzQUFCQklBQUJBb0ZjQllQc2ZBT2J5MW15M0F3QUFnUVFBQUFRU0FBQVE2SXNBOFA0ZkFPYjA5WXkzQXdBQWdRUUFBQVFTQUFBUTZMOEE4UDRmQU9aMlBPdnRBQUJBSUFFQUFJRUVBQUFFRWdBQUVPalRzdmdBRUFCU0hHYStIUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBZC80UEFBRElZd2NBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUU4rTVBnQzI5L3RQMzQ0K0JJcjc4YmQvUng4Q3NMTzd4NGY3cDlFSHdib01mRzRsQ0dCK0FtQWlCajlyRXdJd0x3RXdBWU9mclFrQm1JK1BBSnN6L05tRDh3em1Jd0FhYzFObVQ4NDNtSXRYQUEyNUVUT2FWd0xRbngyQVpneC9LbkFlUW44Q0FBQUNDWUJHUEhWUmlmTVJlaE1BVGJqWlVwSHpFdm9TQUEyNHlWS1o4eE42RWdBQUVFZ0FGT2ZwaWc2Y3A5Q1BBQUNBUUFLZ01FOVZkT0o4aFY0RUFBQUVFZ0FBRUVnQUFFQWdBVkNVOTZsMDVMeUZQZ1FBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVRRkUvL3ZidjZFT0Fpemx2b1E4QkFBQ0JCQUFBQkJJQUFCQklBQlRtZlNxZE9GK2hGd0VBQUlFRVFIR2VxdWpBZVFyOUNBQUFDQ1FBR3ZCMFJXWE9UK2hKQURUaEprdEZ6a3ZvU3dBMDRtWkxKYzVINkUwQUFFQWdBZENNcHk0cWNCNUNmM2VQRC9kUG93K0M2L3orMDdlakQ0RXdCai9Nd3c1QVkyN0c3TW41Qm5NUkFNMjVLYk1INXhuTXh5dUFpWGdsd05vTWZwaVhBSmlRRU9CV0JqL01Ud0FFRUFSOHhNQ0hQQUlBQUFMNUNCQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0RRTjZNUEFKWmxXYjc3MzgrakR3RTQ4czh2djQ0K0JEWjI5L2h3L3pUNklNaGo0RU12Z21BK0FvQmRHZnpRbXhDWWh3QmdGd1kvekVVSTlPY2pRRFpuK01OOFhOZjlDUUEyNVNZQjgzSjk5K1lWQUp0d1k0QXNYZ24wWXdlQTFSbitrTWQxMzQ4QUFJQkFBb0JWZVFxQVhLNy9YZ1FBcTNIeEErNERmUWdBVnVHaUJ3N2NEM29RQUFBUVNBQndNN1VQZk0xOW9UNEJBQUNCQkFBM1VmbkFLZTRQdFFrQUFBZ2tBQUFna0FBQWdFQUNnS3Q1dndkOHhIMmlMZ0VBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJ3TlgrK2VYWDBZY0FGT2MrVVpjQUFJQkFBZ0FBQWdrQUFBZ2tBTGlKOTN2QUtlNFB0UWtBQUFna0FMaVp5Z2UrNXI1UW53QUFnRUFDZ0ZXb2ZlREEvYUFIQWNCcVhQU0ErMEFmQW9CVnVmZ2hsK3UvRndFQUFJRUVBS3Z6RkFCNVhQZjkzRDArM0QrTlBnam05ZDMvZmg1OUNNQ0dEUDYrN0FDd0tUY0htSmZydXpjQndPYmNKR0ErcnV2K3ZBSmdWMTRKUUc4Ry96d0VBRU1JQWVqRjRKK1BBS0FFUVFDMUdQanpFd0FBRU1oSGdBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUcrR1gwQTlQUHd3NStqRHdIZTlQbVA3MGNmQXJSeDkvaHcvelQ2SUtqTndLY3JRUUNuQ1FCT012aVpoUkNBMXdRQXJ4ajh6RW9Jd0FzZkFmSUZ3NStaT2IvaGhRRGdQMjZPSkhDZXd6T3ZBSEJESkpaWEFpU3pBeERPOENlWjg1OWtBZ0FBQWdtQVlKNSt3SFZBTGdFUXlrMFBYcmdlU0NRQUFyblp3V3V1QzlJSUFBQUlKQURDZU1xQjAxd2ZKQkVBQUJCSUFBVHhkQU1mYzUyUVFnQUFRQ0FCQUFDQkJBQUFCQklBSWJ6WGhQTzVYa2dnQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUJDZlA3ais5R0hBRzI0WGtnZ0FBQWdrQUFBZ0VBQ0FBQUNDWUFnM212Q3gxd25wQkFBQUJCSUFJVHhkQU9udVQ1SUlnQUFJSkFBQ09RcEIxNXpYWkJHQUlSeXM0TVhyZ2NTQ1lCZ2JucmdPaUNYQUFDQVFBSWduS2Nma2puL1NYYjMrSEQvTlBvZ3FPSGhoejlISHdMc3d1QUhPd0FjY1ZNa2dmTWNuZ2tBdnVEbXlNeWMzL0RDS3dCTzhrcUFXUmo4OEpvQTRFTkNnSzRNZmpoTkFIQXhRVUJWQmo2Y1R3QUFRQ0FmQVFKQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVDZ1QzOTkvdnR1OUVFQUFQdjU2L1BmZDNZQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFuMWFsdWQvRHpqNlFBQ0E3UjFtdmgwQUFBZ2tBQUFna0FBQWdFQUNBQUFDL1JjQVBnUUVnTGtkejNvN0FBQVFTQUFBUUNBQkFBQ0J2Z2dBM3dFQXdKeStudkYyQUFBZ2tBQUFnRUFDQUFBQ3ZRb0Ezd0VBd0Z6ZW11MTJBQUFna0FBQWdFQnZCb0RYQUFBd2gxTXozUTRBQUFRU0FBQVE2R1FBZUEwQUFMMjlOOHZ0QUFCQUlBRUFBSUhlRFFDdkFRQ2dwNDltdUIwQUFBajBZUURZQlFDQVhzNlozWFlBQUNDUUFBQ0FRR2NGZ05jQUFORER1VFBiRGdBQUJEbzdBT3dDQUVCdGw4eHFPd0FBRU9paUFMQUxBQUExWFRxajdRQUFRS0NMQThBdUFBRFVjczFzdGdNQUFJR3VDZ0M3QUFCUXc3VXoyUTRBQUFTNk9nRHNBZ0RBV0xmTTRwdDJBRVFBQUl4eDZ3ejJDZ0FBQXQwY0FIWUJBR0JmYTh4ZU93QUFFR2lWQUxBTEFBRDdXR3ZtcnJZRElBSUFZRnRyemxxdkFBQWcwS29CWUJjQUFMYXg5b3hkZlFkQUJBREF1cmFZclp1OEFoQUJBTENPcldhcWJ3QUFJTkJtQVdBWEFBQnVzK1VzM1hRSFFBUUF3SFcybnFHYnZ3SVFBUUJ3bVQxbXAyOEFBQ0RRTGdGZ0Z3QUF6clBYek54dEIwQUVBTUQ3OXB5VnU3NENFQUVBOExhOVorVHUzd0NJQUFENDBvalpPT1FqUUJFQUFNOUd6Y1JoL3dwQUJBQ1FidVFzSFByUEFFVUFBS2xHejhEaC93L0E2QVVBZ0wxVm1IM0RBMkJaYWl3RUFPeWh5c3dyRVFETFVtZEJBR0FybFdaZG1RQllsbG9MQXdCcnFqYmpTZ1hBc3RSYklBQzRWY1haVmk0QWxxWG1RZ0hBTmFyT3RKSUJzQ3gxRnd3QXpsVjVscFVOZ0dXcHZYQUE4SjdxTTZ4MEFDeEwvUVVFZ0s5MW1GM2xEL0RZNDhQOTAraGpBSUJUT2d6K2cvSTdBTWM2TFN3QVdick5xRllCc0N6OUZoaUErWFdjVGUwTytKaFhBZ0NNMUhId0g3VGJBVGpXZWVFQjZLMzdER29kQU12Uy93OEFRRDh6eko3MlArQ1lWd0lBYkdtR3dYL1FmZ2ZnMkV4L0dBQnFtVzNHVFBWamp0a05BR0FOc3czK2d5bC8xREVoQU1BMVpoMzhCMU85QW5qTDdIOUFBTmFYTUR1bS80SEg3QVlBOEo2RXdYOFE4ME9QQ1FFQWppVU4vb080SDN4TUNBQmtTeHo4QjdFLy9KZ1FBTWlTUFBnUDRoZmdtQkFBbUp2Qi84SkNuQ0FHQU9aZzZML05vbnhBQ0FEMFpQQy96K0pjUUF3QTFHYm9uODlDWFVrTUFOUmc2Ri9Ib3ExQURBRHN5OUMvblFYY2dDQUFXSmVCdno0THVnTkJBSEFaQTM5N0ZuZ1FVUUR3ekxBZnc2SVhKUkNBV1Jqd05mMGZZdkkwbGZaZCsvUUFBQUFBU1VWT1JLNUNZSUk9IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmcifV19">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@azure/msal-browser@2/lib/msal-browser.min.js" defer></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#ffffff;
+    --surface:#ffffff;
+    --surface-2:#f7f6f4;
+    --surface-3:#edece9;
+    --border:#e9e9e7;
+    --text:#37352f;
+    --text-dim:#787774;
+    --text-faint:#9b9a97;
+    --danger:#eb5757;
+    --accent:#37352f;
+
+    --c-design:#4bb3a5;
+    --c-quote:#9b8cd9;
+    --c-engineering:#5b9bd9;
+    --c-finish:#4caf7d;
+    --c-milestone:#d9a441;
+
+    --font-display:'Noto Sans TC', sans-serif;
+    --font-body:'Noto Sans TC', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1180px;margin:0 auto;padding:32px 20px 90px;}
+
+  header{margin-bottom:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;}
+  header h1{font-family:var(--font-display);font-weight:700;font-size:25px;margin:0 0 5px;letter-spacing:0;}
+  header p{margin:0;color:var(--text-dim);font-size:13px;}
+  .header-actions{display:flex;gap:6px;flex-wrap:wrap;}
+  .btn{background:transparent;border:1px solid transparent;color:var(--text-dim);padding:7px 12px;border-radius:6px;font-size:12.5px;cursor:pointer;font-family:var(--font-body);transition:.12s;}
+  .btn:hover{background:var(--surface-2);color:var(--text);}
+  .btn.danger:hover{background:#fdecec;color:var(--danger);}
+  .btn.primary{background:var(--text);color:#fff;border-color:var(--text);font-weight:600;}
+  .btn.primary:hover{opacity:.85;background:var(--text);}
+
+  .project-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+  .project-name-wrap{flex:1;min-width:200px;}
+  #projectNameInput{
+    background:transparent;border:none;color:var(--text);
+    font-family:var(--font-display);font-weight:700;font-size:19px;padding:4px 6px;width:100%;
+    outline:none;letter-spacing:0;border-radius:6px;
+  }
+  #projectNameInput:hover{background:var(--surface-2);}
+  #projectNameInput:focus{background:var(--surface-2);}
+  .project-name-print{display:none;}
+  .project-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+  .project-controls select{background:var(--surface-2);border:1px solid transparent;color:var(--text-dim);padding:7px 10px;border-radius:6px;font-size:12.5px;font-family:var(--font-body);}
+
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 20px;margin-bottom:14px;}
+  .card h2{font-family:var(--font-display);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text-faint);margin:0 0 14px;display:flex;justify-content:space-between;align-items:center;}
+
+  /* ---- Upcoming ---- */
+  .upcoming-list{display:flex;flex-direction:column;gap:2px;}
+  .upcoming-row{display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid var(--border);font-size:13px;}
+  .upcoming-row:last-child{border-bottom:none;}
+  .dot{width:8px;height:8px;border-radius:50%;flex:none;}
+  .upcoming-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .upcoming-range{font-family:var(--font-mono);color:var(--text-dim);font-size:11.5px;white-space:nowrap;}
+  .badge{font-size:10.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;font-weight:600;letter-spacing:.2px;}
+  .badge.active{background:#e7f5ee;color:#2f9e63;}
+  .badge.soon{background:#fbf1de;color:#b7791f;}
+  .badge.later{background:var(--surface-2);color:var(--text-faint);}
+  .empty-mini{color:var(--text-faint);font-size:12.5px;padding:6px 4px;}
+
+  /* ---- Entry form ---- */
+  form.entry{display:grid;grid-template-columns:1.1fr 1.6fr 1fr .8fr 1.6fr auto;gap:10px;align-items:end;}
+  .extra-fields-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
+  .extra-fields-row .field{flex:1;min-width:150px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field label{font-size:11px;color:var(--text-faint);letter-spacing:.3px;}
+  .field select, .field input{background:var(--surface-2);border:1px solid transparent;color:var(--text);padding:9px 10px;border-radius:6px;font-size:13.5px;font-family:var(--font-body);outline:none;width:100%;}
+  .field input[type="date"], .field input[type="number"]{font-family:var(--font-mono);}
+  .field select:focus,.field input:focus{border-color:var(--text-faint);background:#fff;box-shadow:0 0 0 1px var(--border);}
+  .field input.invalid, .field select.invalid{border-color:var(--danger);background:#fdecec;}
+  .add-btn{background:var(--text);color:#fff;border:none;border-radius:6px;padding:10px 16px;font-weight:600;font-size:13px;cursor:pointer;font-family:var(--font-body);white-space:nowrap;height:38px;}
+  .add-btn:hover{opacity:.85;}
+  .add-btn:disabled{opacity:.4;cursor:not-allowed;}
+
+  /* ---- Summary ---- */
+  .summary-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+  .summary-total{font-family:var(--font-mono);color:var(--text-dim);font-size:12.5px;}
+  .stack{display:flex;height:14px;border-radius:7px;overflow:hidden;background:var(--surface-2);}
+  .stack div{height:100%;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;}
+  .legend .item{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--text-dim);}
+
+  /* ---- View tabs ---- */
+  .view-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:16px;border-bottom:1px solid var(--border);}
+  .view-tab{background:transparent;border:none;border-bottom:2px solid transparent;color:var(--text-faint);padding:8px 12px;font-size:13px;cursor:pointer;font-family:var(--font-body);margin-bottom:-1px;}
+  .view-tab:hover{color:var(--text);}
+  .view-tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:600;}
+  .view-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+  .view-nav .label{font-family:var(--font-display);font-weight:700;font-size:15px;}
+  .view-nav .navbtns{display:flex;gap:6px;}
+  .navbtn{background:var(--surface-2);border:1px solid transparent;color:var(--text-dim);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;}
+  .navbtn:hover{color:var(--text);background:var(--surface-3);}
+
+  /* ---- List/table view ---- */
+  table{width:100%;border-collapse:collapse;}
+  thead th{text-align:left;font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.6px;font-weight:600;padding:0 10px 10px;border-bottom:1px solid var(--border);white-space:nowrap;}
+  tbody td{padding:10px;border-bottom:1px solid var(--border);font-size:13.5px;vertical-align:middle;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:var(--surface-2);}
+  .cat-chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:3px 9px 3px 7px;border-radius:20px;white-space:nowrap;font-weight:600;}
+  .mono{font-family:var(--font-mono);color:var(--text-dim);font-size:12.5px;}
+  .note-cell{color:var(--text-dim);font-size:12.5px;max-width:170px;}
+  .timeline-cell{width:150px;}
+  .bar-track{position:relative;height:8px;background:var(--surface-2);border-radius:5px;}
+  .bar-fill{position:absolute;top:0;height:100%;border-radius:5px;min-width:3px;}
+  .row-actions{display:flex;gap:6px;justify-content:flex-end;opacity:0;transition:.12s;}
+  tr:hover .row-actions{opacity:1;}
+  .row-actions button{background:transparent;border:1px solid transparent;color:var(--text-dim);width:26px;height:26px;border-radius:6px;cursor:pointer;font-size:12.5px;}
+  .row-actions button:hover{background:var(--surface-3);color:var(--text);}
+  .row-actions .del:hover{background:#fdecec;color:var(--danger);}
+
+  .empty{text-align:center;padding:44px 20px;color:var(--text-faint);font-size:13.5px;}
+  .empty b{color:var(--text-dim);display:block;margin-bottom:4px;font-size:14.5px;}
+  .status{font-size:11px;color:var(--text-faint);margin-top:10px;}
+
+  /* ---- Calendar (month / 3-week) ---- */
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
+  .cal-dow{font-size:11px;color:var(--text-faint);text-align:center;padding-bottom:4px;text-transform:uppercase;letter-spacing:.5px;}
+  .cal-cell{background:var(--surface);border:1px solid var(--border);border-radius:6px;min-height:86px;padding:6px;display:flex;flex-direction:column;gap:3px;}
+  .cal-cell.out{opacity:.4;}
+  .cal-cell.today{border-color:var(--c-finish);border-width:1.5px;}
+  .cal-cell.off{background:#fdf6f6;}
+  .cal-cell.off .cal-daynum{color:var(--danger);}
+  .cal-daynum{font-family:var(--font-mono);font-size:11.5px;color:var(--text-dim);}
+  .cal-chip{font-size:10.5px;padding:2px 5px;border-radius:4px;color:#fff;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .cal-more{font-size:10px;color:var(--text-faint);padding-left:2px;}
+
+  /* ---- Gantt / Year ---- */
+  .gantt-wrap{overflow-x:auto;}
+  .gantt-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);}
+  .gantt-row:last-child{border-bottom:none;}
+  .gantt-label{width:170px;flex:none;font-size:12.5px;display:flex;align-items:center;gap:6px;overflow:hidden;}
+  .gantt-label span.name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .gantt-track{position:relative;flex:1;height:14px;background:var(--surface-2);border-radius:5px;min-width:420px;}
+  .gantt-bar{position:absolute;top:0;height:100%;border-radius:5px;min-width:3px;}
+  .gantt-axis{position:relative;height:20px;margin-left:180px;min-width:420px;border-bottom:1px solid var(--border);margin-bottom:6px;}
+  .gantt-axis span{position:absolute;top:0;font-size:10.5px;color:var(--text-faint);transform:translateX(-50%);white-space:nowrap;}
+  .gantt-today-line{position:absolute;top:0;bottom:0;width:1px;background:var(--c-finish);}
+
+  .year-row{display:flex;align-items:center;gap:10px;padding:6px 0;}
+  .year-label{width:44px;flex:none;font-size:11.5px;color:var(--text-dim);font-family:var(--font-mono);}
+  .year-track{position:relative;flex:1;height:14px;background:var(--surface-2);border-radius:4px;min-width:520px;}
+  .year-seg{position:absolute;top:0;height:100%;border-radius:3px;}
+  .year-months{display:flex;margin-left:54px;min-width:520px;margin-bottom:6px;}
+  .year-months span{flex:1;text-align:left;font-size:10.5px;color:var(--text-faint);}
+  .year-wrap{overflow-x:auto;}
+
+  /* ---- Field settings modal ---- */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(55,53,47,.35);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;}
+  .modal-backdrop.open{display:flex;}
+  .modal{background:#fff;border:1px solid var(--border);border-radius:10px;padding:22px;max-width:520px;width:100%;max-height:85vh;overflow:auto;box-shadow:0 12px 32px rgba(15,15,15,.15);}
+  .modal h3{font-family:var(--font-display);font-size:15px;font-weight:700;margin:0 0 4px;}
+  .modal .sub{color:var(--text-dim);font-size:12px;margin:0 0 16px;}
+  .field-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);gap:10px;}
+  .field-row:last-child{border-bottom:none;}
+  .field-row .fname{font-size:13.5px;}
+  .field-row .ftype{font-size:11px;color:var(--text-faint);margin-left:6px;}
+  .switch{position:relative;width:36px;height:20px;background:var(--surface-3);border:1px solid transparent;border-radius:20px;cursor:pointer;flex:none;}
+  .switch.on{background:var(--c-finish);}
+  .switch .knob{position:absolute;top:2px;left:2px;width:14px;height:14px;background:#fff;border-radius:50%;transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.2);}
+  .switch.on .knob{left:18px;}
+  .remove-x{background:none;border:none;color:var(--text-faint);cursor:pointer;font-size:13px;padding:2px 4px;}
+  .remove-x:hover{color:var(--danger);}
+  .add-custom{display:flex;gap:8px;margin-top:14px;}
+  .add-custom input,.add-custom select{background:var(--surface-2);border:1px solid transparent;color:var(--text);padding:8px 9px;border-radius:6px;font-size:13px;font-family:var(--font-body);}
+  .add-custom input{flex:1;}
+  .modal-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:18px;}
+  .check-row{display:flex;align-items:center;gap:9px;padding:7px 0;font-size:13px;}
+  .check-row input{width:16px;height:16px;accent-color:var(--c-finish);}
+  .layer-seg{display:flex;gap:4px;}
+  .layer-seg button{background:var(--surface-2);border:1px solid transparent;color:var(--text-dim);padding:5px 10px;border-radius:6px;font-size:11.5px;cursor:pointer;font-family:var(--font-body);}
+  .layer-seg button.active{background:var(--text);color:#fff;font-weight:600;}
+  .layer-tag{font-size:10.5px;color:var(--text-faint);white-space:nowrap;}
+
+  @media (max-width:760px){
+    form.entry{grid-template-columns:1fr 1fr;}
+    .add-btn{grid-column:1 / -1;}
+    .timeline-cell{display:none;}
+    .cal-grid{grid-template-columns:repeat(7,minmax(0,1fr));}
+    .cal-cell{min-height:60px;font-size:11px;}
+  }
+
+  /* ---- Print ---- */
+  @media print{
+    body{background:#fff;color:#111;}
+    .no-print{display:none !important;}
+    .wrap{max-width:100%;padding:0;}
+    .card{border:1px solid #ccc;background:#fff;box-shadow:none;}
+    .card h2{color:#444;}
+    thead th{color:#555;border-color:#ccc;}
+    tbody td{border-color:#e2e2e2;color:#111;}
+    .bar-track,.gantt-track,.year-track,.cal-cell{background:#f0f0f0;}
+    .mono,.note-cell{color:#555;}
+    .upcoming-row{border-color:#eee;}
+    .project-name-print{display:block;font-family:var(--font-display);font-weight:900;font-size:20px;margin-bottom:14px;}
+  }
+</style>
+</head>
+<body>
+<div class="modal-backdrop" id="oneDriveGate" style="display:none;z-index:200;">
+  <div class="modal" style="max-width:440px;">
+    <h3>登入 OneDrive 以繼續</h3>
+    <p class="sub">這個工具已設定使用 OneDrive 同步，請先登入 Microsoft 帳號讀取你的最新資料，才會顯示內容。</p>
+    <div class="field" style="margin-bottom:12px;">
+      <label>Microsoft 應用程式（用戶端）識別碼</label>
+      <input type="text" id="gateClientIdInput">
+    </div>
+    <button class="btn primary" id="gateSignInBtn" style="width:100%;margin-bottom:8px;">登入 Microsoft</button>
+    <p class="sub" id="gateStatus" style="margin:8px 0;"></p>
+    <button class="btn" id="gateSkipBtn" style="width:100%;">略過，暫時使用本機資料</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div>
+      <h1>工期規劃</h1>
+      <p>建立各項工作的起訖與工期，資料會自動保留，作為後續調整的基礎。</p>
+    </div>
+    <div class="header-actions no-print">
+      <button class="btn" id="fieldSettingsBtn">欄位設定</button>
+      <button class="btn" id="layerSettingsBtn">圖層設定</button>
+      <button class="btn" id="holidaySettingsBtn">假日設定</button>
+      <button class="btn" id="gcalSettingsBtn">Google 日曆</button>
+      <button class="btn" id="odSettingsBtn">OneDrive 同步</button>
+      <button class="btn" id="printBtn">匯出 / 列印</button>
+      <button class="btn danger" id="clearAllBtn">清除全部</button>
+    </div>
+  </header>
+
+  <div class="project-bar">
+    <div class="project-name-wrap no-print">
+      <input type="text" id="projectNameInput" placeholder="專案名稱">
+    </div>
+    <span class="project-name-print" id="projectNamePrint"></span>
+    <div class="project-controls no-print">
+      <select id="projectSelect"></select>
+      <button class="btn" id="newProjectBtn">新增專案</button>
+      <button class="btn danger" id="deleteProjectBtn">刪除專案</button>
+    </div>
+  </div>
+
+  <div class="card section-upcoming" id="upcomingCard">
+    <h2>即將到來的工作</h2>
+    <div class="upcoming-list" id="upcomingList"></div>
+  </div>
+
+  <div class="card no-print">
+    <h2>新增工作項目</h2>
+    <form class="entry" id="entryForm">
+      <div class="field">
+        <label>分類</label>
+        <select id="f-cat">
+          <option value="設計">設計</option>
+          <option value="報價">報價</option>
+          <option value="工程" selected>工程</option>
+          <option value="收尾">收尾</option>
+          <option value="重要節點">重要節點</option>
+        </select>
+      </div>
+      <div class="field"><label>項目名稱</label><input type="text" id="f-name" placeholder="例：一樓灌漿"></div>
+      <div class="field"><label>起始日期</label><input type="date" id="f-start"></div>
+      <div class="field"><label>工期（工作天）</label><input type="number" id="f-dur" min="1" value="3" title="已自動排除週末與假日，系統會往後推算結束日期"></div>
+      <div class="field"><label>備註</label><input type="text" id="f-note" placeholder="選填"></div>
+      <button type="button" class="add-btn" id="submitBtn">新增</button>
+    </form>
+    <div id="entryError" style="display:none;color:var(--danger);font-size:12px;margin-top:8px;"></div>
+    <div class="field" style="max-width:220px;margin-top:10px;">
+      <label>圖層</label>
+      <select id="f-layer">
+        <option value="合約時程">合約時程</option>
+        <option value="設計進度">設計進度</option>
+        <option value="工程安排" selected>工程安排</option>
+      </select>
+    </div>
+    <div class="extra-fields-row" id="extraFieldsRow"></div>
+  </div>
+
+  <div class="card section-summary" id="summaryCard" style="display:none;">
+    <div class="summary-head">
+      <h2 style="margin:0;">專案總覽</h2>
+      <span class="summary-total mono" id="summaryTotal"></span>
+    </div>
+    <div class="stack" id="summaryStack"></div>
+    <div class="legend" id="summaryLegend"></div>
+  </div>
+
+  <div class="view-tabs no-print" id="viewTabs">
+    <button class="view-tab" data-view="list">文字列表</button>
+    <button class="view-tab" data-view="month">月檢視</button>
+    <button class="view-tab" data-view="gantt">甘特圖</button>
+    <button class="view-tab" data-view="year">全年簡圖</button>
+    <button class="view-tab" data-view="week3">三週檢視</button>
+  </div>
+
+  <div class="card" id="viewCard">
+    <div id="viewContent"></div>
+    <div class="status" id="statusLine"></div>
+  </div>
+
+</div>
+
+<!-- Field settings modal -->
+<div class="modal-backdrop no-print" id="fieldModalBackdrop">
+  <div class="modal">
+    <h3>欄位設定</h3>
+    <p class="sub">預設欄位皆為隱藏，開啟後才會出現在表單與清單中；也可新增自訂欄位。</p>
+    <div id="predefinedFieldsList"></div>
+    <div id="customFieldsList"></div>
+    <div class="add-custom">
+      <input type="text" id="newFieldLabel" placeholder="新增自訂欄位名稱">
+      <select id="newFieldType"><option value="date">日期</option><option value="text">文字</option></select>
+      <button class="btn" id="addCustomFieldBtn">新增</button>
+    </div>
+    <div class="modal-foot">
+      <button class="btn primary" id="closeFieldModalBtn">完成</button>
+    </div>
+  </div>
+</div>
+
+<!-- Layer settings modal -->
+<div class="modal-backdrop no-print" id="layerModalBackdrop">
+  <div class="modal">
+    <h3>圖層設定</h3>
+    <p class="sub">合約時程、設計進度這類時間跨度較長的項目，常駐在月檢視／甘特圖／全年簡圖／三週檢視時容易顯得雜亂。可依圖層選擇正常顯示、淡化（降低 60% 不透明度）或直接隱藏；文字列表不受影響，仍會列出全部項目。</p>
+    <div id="layerSettingsList"></div>
+    <div class="modal-foot">
+      <button class="btn primary" id="closeLayerModalBtn">完成</button>
+    </div>
+  </div>
+</div>
+
+<!-- Holiday settings modal -->
+<div class="modal-backdrop no-print" id="holidayModalBackdrop">
+  <div class="modal">
+    <h3>假日設定</h3>
+    <p class="sub">已預先匯入行政院人事行政總處 115–116 年（2026–2027）國定假日，新增工作項目時，工期天數會自動排除週末與假日，往後推算結束日期。</p>
+    <div class="field-row">
+      <div class="fname">週六算休假</div>
+      <div class="switch on" id="satSwitch"><div class="knob"></div></div>
+    </div>
+    <div class="field-row">
+      <div class="fname">週日算休假</div>
+      <div class="switch on" id="sunSwitch"><div class="knob"></div></div>
+    </div>
+    <div id="holidayList" style="margin-top:10px;max-height:240px;overflow:auto;"></div>
+    <div class="add-custom">
+      <input type="date" id="newHolidayDate">
+      <input type="text" id="newHolidayName" placeholder="假日名稱">
+      <button class="btn" id="addHolidayBtn">新增</button>
+    </div>
+    <div class="modal-foot">
+      <button class="btn primary" id="closeHolidayModalBtn">完成</button>
+    </div>
+  </div>
+</div>
+
+<!-- Google Calendar settings modal -->
+<div class="modal-backdrop no-print" id="gcalModalBackdrop">
+  <div class="modal">
+    <h3>Google 日曆同步</h3>
+    <p class="sub">
+      需要你自己在 Google Cloud Console 建立一組 OAuth 用戶端 ID（Web 應用程式），並將這個網頁實際部署的網址加入「已授權的 JavaScript 來源」，同步才能運作。此功能不需要伺服器，直接在瀏覽器內與 Google 日曆溝通。
+    </p>
+    <div class="field" style="margin-bottom:10px;">
+      <label>Google OAuth 用戶端 ID</label>
+      <input type="text" id="gcalClientIdInput" placeholder="xxxxxxxxxx.apps.googleusercontent.com">
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:14px;">
+      <button class="btn primary" id="gcalSignInBtn">登入 Google</button>
+      <button class="btn" id="gcalSyncBtn">立即同步</button>
+    </div>
+    <p class="sub" id="gcalStatus" style="margin-bottom:14px;">尚未連接。</p>
+    <div class="field">
+      <label>這個專案要同步的日曆</label>
+      <select id="gcalCalendarSelect"><option value="">請先登入 Google</option></select>
+    </div>
+    <p class="sub" style="margin-top:10px;">
+      每個專案可各自指定一個日曆。新增／編輯／刪除工作項目時，會自動推送到這裡指定的日曆；按「立即同步」則會把該日曆目前的事件也拉回來比對更新（若日曆上有直接新增的事件，會被匯入為新的工作項目）。
+    </p>
+    <div class="modal-foot">
+      <button class="btn primary" id="closeGcalModalBtn">完成</button>
+    </div>
+  </div>
+</div>
+
+<!-- OneDrive sync settings modal -->
+<div class="modal-backdrop no-print" id="odModalBackdrop">
+  <div class="modal">
+    <h3>OneDrive 同步</h3>
+    <p class="sub">
+      目前所有資料（專案、工作項目、假日、圖層設定）預設存在 Claude 的 artifact 儲存空間，只有在 Claude 裡開啟這個檔案時才讀得到。連接 OneDrive 後，資料會改成存進你自己 OneDrive 帳號下一個給這個 App 專用的隱藏資料夾，手機、桌機只要用同一個微軟帳號登入，打開這個網頁都能讀到同一份、互相同步。
+    </p>
+    <p class="sub">
+      需要你自己在 Microsoft Entra（Azure）後台註冊一個應用程式，取得「應用程式 (用戶端) 識別碼」，並把這個網頁實際部署的網址加進「重新導向 URI」，同步才能運作；不需要伺服器，直接在瀏覽器內與 OneDrive 溝通。為了安全起見，每次重新打開網頁都需要重新登入一次微軟帳號（不會把登入狀態存起來），但已同步的資料本身是永久保存在你的 OneDrive 裡的。
+    </p>
+    <div class="field" style="margin-bottom:10px;">
+      <label>Microsoft 應用程式（用戶端）識別碼</label>
+      <input type="text" id="odClientIdInput" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:14px;">
+      <button class="btn primary" id="odSignInBtn">登入 Microsoft</button>
+      <button class="btn" id="odSyncBtn">立即同步</button>
+    </div>
+    <p class="sub" id="odStatus" style="margin-bottom:0;">尚未連接，目前資料存在 Claude 的 artifact 儲存空間。</p>
+    <div class="modal-foot">
+      <button class="btn primary" id="closeOdModalBtn">完成</button>
+    </div>
+  </div>
+</div>
+
+<!-- Print settings modal -->
+<div class="modal-backdrop no-print" id="printModalBackdrop">
+  <div class="modal">
+    <h3>匯出 / 列印設定</h3>
+    <p class="sub" id="printViewLabel"></p>
+    <div class="check-row"><input type="checkbox" id="pOptSummary" checked><label for="pOptSummary">包含專案總覽</label></div>
+    <div class="check-row"><input type="checkbox" id="pOptNote" checked><label for="pOptNote">包含備註欄</label></div>
+    <div class="check-row"><input type="checkbox" id="pOptUpcoming"><label for="pOptUpcoming">包含即將到來的工作</label></div>
+    <div id="printFieldChecks"></div>
+    <div class="modal-foot">
+      <button class="btn" id="closePrintModalBtn">取消</button>
+      <button class="btn primary" id="doPrintBtn">匯出為 PDF</button>
+    </div>
+  </div>
+</div>
+
+<style id="dynamicPrintStyle"></style>
+
+<script>
+const CATS = {
+  '設計':'var(--c-design)','報價':'var(--c-quote)','工程':'var(--c-engineering)',
+  '收尾':'var(--c-finish)','重要節點':'var(--c-milestone)',
+};
+const CATS_RAW = {
+  '設計':'#4bb3a5','報價':'#9b8cd9','工程':'#5b9bd9','收尾':'#4caf7d','重要節點':'#d9a441',
+};
+/* legacy category names from before the taxonomy change, remapped on load */
+const CAT_MIGRATION = { '合約':'重要節點', '基礎':'工程', '後端':'工程' };
+const DOW = ['日','一','二','三','四','五','六'];
+const PROJECTS_KEY = 'schedule-projects';
+const HOLIDAYS_KEY = 'schedule-holidays';
+function projectDataKey(id){ return `schedule-data:${id}`; }
+function genProjectId(){ return 'p'+Date.now()+Math.random().toString(36).slice(2,7); }
+
+/* ---------- unified storage abstraction ----------
+   Every read/write in this app goes through appStorage, not window.storage
+   directly. When OneDrive is connected, data is read/written to a JSON file
+   per key inside the app's dedicated OneDrive folder (Microsoft Graph
+   "approot" special folder) so it's the same on every device. Otherwise it
+   falls back to window.storage (Claude's artifact storage, only available
+   while this file is opened inside Claude). If neither is available, data
+   simply won't persist between reloads. */
+let oneDriveClientId = '';
+let oneDriveAccessToken = null;
+let msalInstance = null;
+let lastOneDriveError = '';
+
+function odFileUrl(key){
+  return `https://graph.microsoft.com/v1.0/me/drive/special/approot:/${encodeURIComponent(key)}.json:/content`;
+}
+async function odGet(key){
+  const res = await fetch(odFileUrl(key), { headers:{ Authorization:'Bearer '+oneDriveAccessToken } });
+  if(res.status===404) return null;
+  if(!res.ok) throw new Error('OneDrive 讀取失敗 ('+res.status+')');
+  const text = await res.text();
+  return { key, value: text };
+}
+async function odSet(key, value){
+  const res = await fetch(odFileUrl(key), {
+    method:'PUT',
+    headers:{ Authorization:'Bearer '+oneDriveAccessToken, 'Content-Type':'application/json' },
+    body: value
+  });
+  if(!res.ok) throw new Error('OneDrive 寫入失敗 ('+res.status+')');
+  return { key, value };
+}
+async function odDelete(key){
+  await fetch(odFileUrl(key).replace(':/content',''), { method:'DELETE', headers:{ Authorization:'Bearer '+oneDriveAccessToken } });
+  return { key, deleted:true };
+}
+
+const appStorage = {
+  async get(key, shared){
+    if(oneDriveAccessToken){ try{ return await odGet(key); }catch(e){ /* fall through */ } }
+    if(window.storage){ try{ return await window.storage.get(key, shared); }catch(e){ /* fall through */ } }
+    try{ const v = localStorage.getItem('sp:'+key); return v!==null ? {key, value:v} : null; }catch(e){ return null; }
+  },
+  async set(key, value, shared){
+    let result = null;
+    if(oneDriveAccessToken){ try{ result = await odSet(key, value); }catch(e){ /* fall through */ } }
+    if(window.storage){ try{ const r = await window.storage.set(key, value, shared); if(r) result = result || r; }catch(e){ /* fall through */ } }
+    try{ localStorage.setItem('sp:'+key, value); result = result || {key, value}; }catch(e){ /* ignore */ }
+    return result;
+  },
+  async delete(key, shared){
+    if(oneDriveAccessToken){ try{ return await odDelete(key); }catch(e){ /* fall through */ } }
+    if(window.storage){ try{ return await window.storage.delete(key, shared); }catch(e){ /* fall through */ } }
+    try{ localStorage.removeItem('sp:'+key); }catch(e){}
+    return {key, deleted:true};
+  }
+};
+
+/* ---------- OneDrive sign-in (Microsoft Entra / MSAL, redirect flow) ---------- */
+const OD_CLIENTID_KEY = 'schedule-onedrive-clientid';
+function loadOneDriveClientId(){
+  try{ oneDriveClientId = localStorage.getItem(OD_CLIENTID_KEY) || ''; }catch(e){ oneDriveClientId = ''; }
+}
+function saveOneDriveClientIdLocal(){
+  try{ localStorage.setItem(OD_CLIENTID_KEY, oneDriveClientId); }catch(e){ /* ignore */ }
+}
+
+async function ensureMsalInstance(){
+  if(!window.msal || !oneDriveClientId) return null;
+  if(!msalInstance || msalInstance._clientId !== oneDriveClientId){
+    msalInstance = new msal.PublicClientApplication({
+      auth:{
+        clientId: oneDriveClientId,
+        authority: 'https://login.microsoftonline.com/common',
+        redirectUri: window.location.href.split('#')[0].split('?')[0],
+      },
+      cache:{ cacheLocation: 'sessionStorage' }
+    });
+    if(typeof msalInstance.initialize === 'function'){ await msalInstance.initialize(); }
+    msalInstance._clientId = oneDriveClientId;
+  }
+  return msalInstance;
+}
+
+function odSetStatus(msg){
+  const el = document.getElementById('odStatus');
+  if(el) el.textContent = msg;
+}
+
+async function onOneDriveSignedIn(){
+  odSetStatus('已連接 OneDrive，同步中…');
+  try{
+    await loadHolidays();
+    await loadProjects();
+    odSetStatus('已連接 OneDrive · ' + new Date().toLocaleTimeString('zh-TW'));
+  }catch(e){
+    odSetStatus('已連接，但同步時發生錯誤，請按「立即同步」再試一次。');
+  }
+}
+
+async function handleOneDriveRedirect(){
+  loadOneDriveClientId();
+  if(!oneDriveClientId || !window.msal) return false;
+  try{
+    const client = await ensureMsalInstance();
+    if(!client) return false;
+    const result = await client.handleRedirectPromise();
+    if(result && result.accessToken){
+      oneDriveAccessToken = result.accessToken;
+      await onOneDriveSignedIn();
+      return true;
+    }
+    const accounts = client.getAllAccounts();
+    if(accounts.length){
+      try{
+        const silent = await client.acquireTokenSilent({ scopes:['Files.ReadWrite.AppFolder'], account: accounts[0] });
+        oneDriveAccessToken = silent.accessToken;
+        await onOneDriveSignedIn();
+        return true;
+      }catch(e){ /* needs interactive sign-in again, that's fine */ }
+    }
+  }catch(e){
+    lastOneDriveError = (e && e.message) ? e.message : String(e);
+  }
+  return false;
+}
+
+document.getElementById('odSettingsBtn').addEventListener('click', ()=>{
+  document.getElementById('odClientIdInput').value = oneDriveClientId;
+  if(lastOneDriveError){
+    odSetStatus('上次登入返回時發生錯誤：' + lastOneDriveError);
+  } else {
+    odSetStatus(oneDriveAccessToken ? '已連接 OneDrive。' : '尚未連接，目前資料存在 Claude 的 artifact 儲存空間。');
+  }
+  document.getElementById('odModalBackdrop').classList.add('open');
+});
+document.getElementById('closeOdModalBtn').addEventListener('click', ()=> document.getElementById('odModalBackdrop').classList.remove('open'));
+
+document.getElementById('odSignInBtn').addEventListener('click', async ()=>{
+  oneDriveClientId = document.getElementById('odClientIdInput').value.trim();
+  if(!oneDriveClientId){ odSetStatus('請先輸入用戶端識別碼。'); return; }
+  saveOneDriveClientIdLocal();
+  if(!window.msal){ odSetStatus('Microsoft 登入元件尚未載入，請確認網路連線後再試一次。'); return; }
+  let client;
+  try{
+    client = await ensureMsalInstance();
+  }catch(e){
+    odSetStatus('初始化失敗：' + (e && e.message ? e.message : e));
+    return;
+  }
+  if(!client){ odSetStatus('初始化失敗，請確認識別碼是否正確。'); return; }
+  odSetStatus('正在導向 Microsoft 登入…');
+  try{
+    await client.loginRedirect({ scopes:['Files.ReadWrite.AppFolder'] });
+  }catch(e){
+    odSetStatus('登入失敗：' + (e && e.message ? e.message : e));
+  }
+});
+
+document.getElementById('odSyncBtn').addEventListener('click', async ()=>{
+  if(!oneDriveAccessToken){ odSetStatus('請先登入 Microsoft 帳號。'); return; }
+  odSetStatus('同步中…');
+  try{
+    await saveHolidays();
+    await saveProjectsRegistry();
+    await saveProjectData();
+    await loadHolidays();
+    await loadProjects();
+    odSetStatus('同步完成 · ' + new Date().toLocaleTimeString('zh-TW'));
+  }catch(e){
+    odSetStatus('同步發生錯誤，請稍後再試一次。');
+  }
+});
+
+/* Source: 行政院人事行政總處 115年(2026)、116年(2027) 政府行政機關辦公日曆表。
+   週末已由 weekendOff 設定自動排除，此處僅列平日的國定假日與補假。 */
+const DEFAULT_HOLIDAYS = [
+  {date:'2026-01-01', name:'元旦'},
+  {date:'2026-02-16', name:'除夕'},
+  {date:'2026-02-17', name:'春節'},
+  {date:'2026-02-18', name:'春節'},
+  {date:'2026-02-19', name:'春節'},
+  {date:'2026-02-20', name:'春節補假'},
+  {date:'2026-02-27', name:'和平紀念日補假'},
+  {date:'2026-04-03', name:'兒童節補假'},
+  {date:'2026-04-06', name:'清明節補假'},
+  {date:'2026-05-01', name:'勞動節'},
+  {date:'2026-06-19', name:'端午節'},
+  {date:'2026-09-25', name:'中秋節'},
+  {date:'2026-09-28', name:'教師節'},
+  {date:'2026-10-09', name:'國慶日補假'},
+  {date:'2026-10-26', name:'光復節補假'},
+  {date:'2026-12-25', name:'行憲紀念日'},
+  {date:'2027-01-01', name:'元旦'},
+  {date:'2027-02-04', name:'小年夜'},
+  {date:'2027-02-05', name:'除夕'},
+  {date:'2027-02-08', name:'春節'},
+  {date:'2027-02-09', name:'春節補假'},
+  {date:'2027-02-10', name:'春節補假'},
+  {date:'2027-03-01', name:'和平紀念日補假'},
+  {date:'2027-04-05', name:'清明節'},
+  {date:'2027-04-06', name:'兒童節補假'},
+  {date:'2027-04-30', name:'勞動節補假'},
+  {date:'2027-06-09', name:'端午節'},
+  {date:'2027-09-15', name:'中秋節'},
+  {date:'2027-09-28', name:'教師節'},
+  {date:'2027-10-11', name:'國慶日補假'},
+  {date:'2027-10-25', name:'光復節'},
+  {date:'2027-12-24', name:'行憲紀念日補假'},
+  {date:'2027-12-31', name:'元旦補假(2028)'},
+];
+
+const LAYERS = ['合約時程','設計進度','工程安排'];
+
+const DEFAULT_FIELDS = [
+  {id:'entry', label:'進場時間', type:'date', predefined:true, visible:false},
+  {id:'exit', label:'退場時間', type:'date', predefined:true, visible:false},
+  {id:'sample', label:'打樣日', type:'date', predefined:true, visible:false},
+  {id:'quoteConfirm', label:'報價確認', type:'date', predefined:true, visible:false},
+  {id:'repair', label:'修繕', type:'date', predefined:true, visible:false},
+];
+
+let tasks = [];
+let fieldDefs = DEFAULT_FIELDS.map(f=>({...f}));
+let layerSettings = {'合約時程':'show','設計進度':'show','工程安排':'show'};
+let projectsList = [];
+let currentProjectId = null;
+let holidays = [];
+let weekendOff = {sat:true, sun:true};
+let holidaySet = new Set();
+let googleClientId = '';
+let googleAccessToken = null;
+let googleTokenClient = null;
+let currentView = 'list';
+let editingId = null;
+let monthCursor = startOfMonth(new Date());
+let weekCursor = startOfWeek(new Date());
+let yearCursor = new Date().getFullYear();
+
+const statusLine = document.getElementById('statusLine');
+
+/* ---------- date helpers ---------- */
+function pad(n){ return String(n).padStart(2,'0'); }
+function parseDate(str){ return new Date(str+'T00:00:00'); }
+function addDays(d,n){ const r=new Date(d); r.setDate(r.getDate()+n); return r; }
+function toKey(d){ return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; }
+function fmtSlash(d){ return `${d.getFullYear()}/${pad(d.getMonth()+1)}/${pad(d.getDate())}`; }
+function today0(){ const d=new Date(); d.setHours(0,0,0,0); return d; }
+function startOfMonth(d){ return new Date(d.getFullYear(), d.getMonth(), 1); }
+function startOfWeek(d){ const r=new Date(d); r.setHours(0,0,0,0); r.setDate(r.getDate()-r.getDay()); return r; }
+function endDateOf(startStr,dur){
+  let d = parseDate(startStr);
+  let remaining = Number(dur);
+  while(true){
+    if(!isHoliday(d)){
+      remaining--;
+      if(remaining<=0) break;
+    }
+    d = addDays(d,1);
+  }
+  return d;
+}
+function isHoliday(date){
+  const dow = date.getDay();
+  if(dow===6 && weekendOff.sat) return true;
+  if(dow===0 && weekendOff.sun) return true;
+  return holidaySet.has(toKey(date));
+}
+function rebuildHolidaySet(){
+  holidaySet = new Set(holidays.map(h=>h.date));
+}
+function daysInMonth(y,m){ return new Date(y,m+1,0).getDate(); }
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function tasksOverlappingDay(day){
+  const k = toKey(day);
+  return tasks.filter(t=>{
+    const s = toKey(parseDate(t.start));
+    const e = toKey(endDateOf(t.start,t.dur));
+    return k>=s && k<=e;
+  });
+}
+
+/* ---------- storage: holidays (global, shared across all projects) ---------- */
+async function loadHolidays(){
+  try{
+    const res = await appStorage.get(HOLIDAYS_KEY, false);
+    if(res && res.value){
+      const parsed = JSON.parse(res.value);
+      holidays = (parsed.holidays && parsed.holidays.length) ? parsed.holidays : DEFAULT_HOLIDAYS.map(h=>({...h}));
+      weekendOff = parsed.weekendOff || {sat:true, sun:true};
+    } else {
+      holidays = DEFAULT_HOLIDAYS.map(h=>({...h}));
+    }
+  }catch(e){
+    holidays = DEFAULT_HOLIDAYS.map(h=>({...h}));
+  }
+  rebuildHolidaySet();
+}
+async function saveHolidays(){
+  try{ await appStorage.set(HOLIDAYS_KEY, JSON.stringify({holidays, weekendOff}), false); }catch(e){ /* best effort */ }
+}
+
+/* ---------- storage: google calendar config (global) ---------- */
+const GOOGLE_CONFIG_KEY = 'schedule-google-config';
+async function loadGoogleConfig(){
+  try{
+    const res = await appStorage.get(GOOGLE_CONFIG_KEY, false);
+    if(res && res.value){ googleClientId = JSON.parse(res.value).clientId || ''; }
+  }catch(e){ /* not set yet */ }
+}
+async function saveGoogleConfig(){
+  try{ await appStorage.set(GOOGLE_CONFIG_KEY, JSON.stringify({clientId: googleClientId}), false); }catch(e){}
+}
+
+/* ---------- google calendar sync ---------- */
+function currentProject(){ return projectsList.find(p=>p.id===currentProjectId); }
+
+function ensureGoogleTokenClient(){
+  if(!window.google || !google.accounts || !google.accounts.oauth2) return null;
+  if(!googleTokenClient || googleTokenClient._clientId !== googleClientId){
+    googleTokenClient = google.accounts.oauth2.initTokenClient({
+      client_id: googleClientId,
+      scope: 'https://www.googleapis.com/auth/calendar',
+      callback: (resp)=>{
+        if(resp && resp.access_token){
+          googleAccessToken = resp.access_token;
+          onGoogleSignedIn();
+        } else {
+          document.getElementById('gcalStatus').textContent = '登入失敗或已取消。';
+        }
+      }
+    });
+    googleTokenClient._clientId = googleClientId;
+  }
+  return googleTokenClient;
+}
+
+async function onGoogleSignedIn(){
+  document.getElementById('gcalStatus').textContent = '已連接 Google 帳號，讀取日曆清單中…';
+  try{
+    const res = await fetch('https://www.googleapis.com/calendar/v3/users/me/calendarList', {
+      headers:{ Authorization: 'Bearer '+googleAccessToken }
+    });
+    const data = await res.json();
+    const items = data.items || [];
+    const select = document.getElementById('gcalCalendarSelect');
+    select.innerHTML = items.map(c=>`<option value="${c.id}">${escapeHtml(c.summary)}</option>`).join('');
+    const proj = currentProject();
+    if(proj && proj.googleCalendarId) select.value = proj.googleCalendarId;
+    document.getElementById('gcalStatus').textContent = '已連接，請選擇這個專案要同步的日曆。';
+  }catch(e){
+    document.getElementById('gcalStatus').textContent = '讀取日曆清單失敗，請重新登入一次。';
+  }
+}
+
+async function pushTaskToGoogle(t){
+  const proj = currentProject();
+  if(!proj || !proj.googleCalendarId || !googleAccessToken) return;
+  const endExclusive = addDays(endDateOf(t.start, t.dur), 1);
+  const body = {
+    summary: t.name,
+    description: `分類：${t.cat}` + (t.note ? `\n備註：${t.note}` : ''),
+    start:{ date: t.start },
+    end:{ date: toKey(endExclusive) },
+  };
+  const base = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(proj.googleCalendarId)}/events`;
+  try{
+    if(t.googleEventId){
+      await fetch(`${base}/${t.googleEventId}`, {
+        method:'PATCH',
+        headers:{ Authorization:'Bearer '+googleAccessToken, 'Content-Type':'application/json' },
+        body: JSON.stringify(body)
+      });
+    } else {
+      const res = await fetch(base, {
+        method:'POST',
+        headers:{ Authorization:'Bearer '+googleAccessToken, 'Content-Type':'application/json' },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      if(data.id){ t.googleEventId = data.id; await saveProjectData(); }
+    }
+  }catch(e){ /* best effort push; user can retry via 立即同步 */ }
+}
+
+async function deleteTaskFromGoogle(t){
+  const proj = currentProject();
+  if(!proj || !proj.googleCalendarId || !googleAccessToken || !t.googleEventId) return;
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(proj.googleCalendarId)}/events/${t.googleEventId}`;
+  try{ await fetch(url, { method:'DELETE', headers:{ Authorization:'Bearer '+googleAccessToken } }); }catch(e){ /* ignore */ }
+}
+
+function countWorkdays(startDate, lastDay){
+  let count=0, d=new Date(startDate);
+  while(d<=lastDay){ if(!isHoliday(d)) count++; d=addDays(d,1); }
+  return Math.max(1,count);
+}
+
+async function pullFromGoogle(){
+  const proj = currentProject();
+  if(!proj || !proj.googleCalendarId || !googleAccessToken) return;
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(proj.googleCalendarId)}/events?singleEvents=true&maxResults=250&timeMin=2020-01-01T00:00:00Z`;
+  const res = await fetch(url, { headers:{ Authorization:'Bearer '+googleAccessToken } });
+  const data = await res.json();
+  const events = (data.items || []).filter(ev=>ev.status!=='cancelled' && ev.start && ev.start.date);
+  const byGoogleId = {};
+  tasks.forEach(t=>{ if(t.googleEventId) byGoogleId[t.googleEventId]=t; });
+  events.forEach(ev=>{
+    const endExclusive = parseDate(ev.end.date);
+    const lastDay = addDays(endExclusive,-1);
+    const dur = countWorkdays(parseDate(ev.start.date), lastDay);
+    if(byGoogleId[ev.id]){
+      const t = byGoogleId[ev.id];
+      t.start = ev.start.date;
+      t.dur = dur;
+      if(ev.summary) t.name = ev.summary;
+    } else {
+      tasks.push({
+        id:'t'+Date.now()+Math.random().toString(36).slice(2,7),
+        cat: '設計',
+        name: ev.summary || '(無標題)',
+        start: ev.start.date,
+        dur,
+        note: '（從 Google 日曆匯入）',
+        extra: {},
+        googleEventId: ev.id
+      });
+    }
+  });
+}
+
+async function syncWithGoogle(){
+  const proj = currentProject();
+  if(!proj || !proj.googleCalendarId){ document.getElementById('gcalStatus').textContent = '請先選擇這個專案要同步的日曆。'; return; }
+  if(!googleAccessToken){ document.getElementById('gcalStatus').textContent = '請先登入 Google 帳號。'; return; }
+  document.getElementById('gcalStatus').textContent = '同步中…';
+  try{
+    for(const t of tasks){ await pushTaskToGoogle(t); }
+    await pullFromGoogle();
+    await saveProjectData();
+    renderAll();
+    document.getElementById('gcalStatus').textContent = '同步完成 · ' + new Date().toLocaleTimeString('zh-TW');
+  }catch(e){
+    document.getElementById('gcalStatus').textContent = '同步發生錯誤，請稍後再試一次。';
+  }
+}
+
+document.getElementById('gcalSettingsBtn').addEventListener('click', ()=>{
+  document.getElementById('gcalClientIdInput').value = googleClientId;
+  const proj = currentProject();
+  document.getElementById('gcalStatus').textContent = googleAccessToken ? '已連接 Google 帳號。' : '尚未連接。';
+  if(!googleAccessToken){
+    document.getElementById('gcalCalendarSelect').innerHTML = '<option value="">請先登入 Google</option>';
+  }
+  document.getElementById('gcalModalBackdrop').classList.add('open');
+});
+document.getElementById('closeGcalModalBtn').addEventListener('click', ()=> document.getElementById('gcalModalBackdrop').classList.remove('open'));
+
+document.getElementById('gcalSignInBtn').addEventListener('click', async ()=>{
+  googleClientId = document.getElementById('gcalClientIdInput').value.trim();
+  if(!googleClientId){ document.getElementById('gcalStatus').textContent = '請先輸入 OAuth 用戶端 ID。'; return; }
+  await saveGoogleConfig();
+  const client = ensureGoogleTokenClient();
+  if(!client){ document.getElementById('gcalStatus').textContent = 'Google 登入元件尚未載入，請確認網路連線後再試一次。'; return; }
+  client.requestAccessToken();
+});
+
+document.getElementById('gcalSyncBtn').addEventListener('click', syncWithGoogle);
+
+document.getElementById('gcalCalendarSelect').addEventListener('change', async (e)=>{
+  const proj = currentProject();
+  if(proj){ proj.googleCalendarId = e.target.value; await saveProjectsRegistry(); }
+});
+
+/* ---------- storage: project registry ---------- */
+async function loadProjects(){
+  statusLine.textContent = '讀取專案中…';
+  try{
+    const res = await appStorage.get(PROJECTS_KEY, false);
+    if(res && res.value){
+      const parsed = JSON.parse(res.value);
+      projectsList = parsed.list || [];
+      currentProjectId = parsed.currentId || (projectsList[0] && projectsList[0].id) || null;
+    }
+  }catch(e){ /* no registry yet */ }
+
+  if(!projectsList.length){
+    const id = genProjectId();
+    projectsList = [{id, name:'未命名專案'}];
+    currentProjectId = id;
+    await saveProjectsRegistry();
+  }
+  await loadProjectData(currentProjectId);
+}
+
+async function saveProjectsRegistry(){
+  try{
+    await appStorage.set(PROJECTS_KEY, JSON.stringify({list:projectsList, currentId:currentProjectId}), false);
+  }catch(e){ /* best effort */ }
+}
+
+/* ---------- storage: per-project task/field data ---------- */
+async function loadProjectData(id){
+  statusLine.textContent = '讀取先前輸入中…';
+  tasks = [];
+  fieldDefs = DEFAULT_FIELDS.map(f=>({...f}));
+  layerSettings = {'合約時程':'show','設計進度':'show','工程安排':'show'};
+  try{
+    const res = await appStorage.get(projectDataKey(id), false);
+    if(res && res.value){
+      const parsed = JSON.parse(res.value);
+      tasks = parsed.tasks || [];
+      fieldDefs = (parsed.fieldDefs && parsed.fieldDefs.length) ? parsed.fieldDefs : DEFAULT_FIELDS.map(f=>({...f}));
+      if(parsed.layerSettings) layerSettings = {...layerSettings, ...parsed.layerSettings};
+    }
+  }catch(e){ /* new project, nothing saved yet */ }
+  let migrated = false;
+  tasks.forEach(t=>{
+    if(CAT_MIGRATION[t.cat]){ t.cat = CAT_MIGRATION[t.cat]; migrated = true; }
+    else if(!CATS_RAW[t.cat]){ t.cat = '工程'; migrated = true; }
+  });
+  statusLine.textContent = '';
+  monthCursor = startOfMonth(new Date());
+  weekCursor = startOfWeek(new Date());
+  yearCursor = new Date().getFullYear();
+  editingId = null;
+  renderProjectBar();
+  renderAll();
+  if(migrated) await saveProjectData();
+  const proj = currentProject();
+  if(proj && proj.googleCalendarId && googleAccessToken){
+    try{ await pullFromGoogle(); await saveProjectData(); renderAll(); }catch(e){ /* best effort */ }
+  }
+}
+
+async function saveProjectData(){
+  try{
+    const result = await appStorage.set(projectDataKey(currentProjectId), JSON.stringify({tasks, fieldDefs, layerSettings}), false);
+    if(!result){ statusLine.textContent = '儲存失敗，請重試。'; }
+    else{ statusLine.textContent = '已自動儲存'; setTimeout(()=>{ if(statusLine.textContent==='已自動儲存') statusLine.textContent=''; },1500); }
+  }catch(e){ statusLine.textContent = '儲存失敗，請重試。'; }
+}
+
+function layerMode(layer){ return layerSettings[layer] || 'show'; }
+
+/* ---------- project bar UI ---------- */
+function renderProjectBar(){
+  const current = projectsList.find(p=>p.id===currentProjectId) || {name:''};
+  const nameInput = document.getElementById('projectNameInput');
+  if(document.activeElement !== nameInput) nameInput.value = current.name;
+  document.getElementById('projectNamePrint').textContent = current.name;
+
+  const select = document.getElementById('projectSelect');
+  select.innerHTML = projectsList.map(p=>`<option value="${p.id}" ${p.id===currentProjectId?'selected':''}>${escapeHtml(p.name)}</option>`).join('');
+}
+
+document.getElementById('projectNameInput').addEventListener('change', async (e)=>{
+  const val = e.target.value.trim() || '未命名專案';
+  e.target.value = val;
+  const p = projectsList.find(x=>x.id===currentProjectId);
+  if(p){ p.name = val; }
+  document.getElementById('projectNamePrint').textContent = val;
+  const select = document.getElementById('projectSelect');
+  const opt = select.querySelector(`option[value="${currentProjectId}"]`);
+  if(opt) opt.textContent = val;
+  await saveProjectsRegistry();
+});
+
+document.getElementById('projectSelect').addEventListener('change', async (e)=>{
+  currentProjectId = e.target.value;
+  await saveProjectsRegistry();
+  await loadProjectData(currentProjectId);
+});
+
+document.getElementById('newProjectBtn').addEventListener('click', async ()=>{
+  const name = prompt('新專案名稱', '新專案');
+  if(name === null) return;
+  const id = genProjectId();
+  projectsList.push({id, name: name.trim() || '新專案'});
+  currentProjectId = id;
+  await saveProjectsRegistry();
+  await loadProjectData(currentProjectId);
+});
+
+document.getElementById('deleteProjectBtn').addEventListener('click', async ()=>{
+  const current = projectsList.find(p=>p.id===currentProjectId);
+  if(!current) return;
+  if(!confirm(`確定要刪除專案「${current.name}」嗎？此動作無法復原。`)) return;
+  try{ await appStorage.delete(projectDataKey(currentProjectId), false); }catch(e){ /* ignore */ }
+  projectsList = projectsList.filter(p=>p.id!==currentProjectId);
+  if(!projectsList.length){
+    const id = genProjectId();
+    projectsList = [{id, name:'未命名專案'}];
+  }
+  currentProjectId = projectsList[0].id;
+  await saveProjectsRegistry();
+  await loadProjectData(currentProjectId);
+});
+
+/* ---------- master render ---------- */
+function renderAll(){
+  renderUpcoming();
+  renderSummary();
+  renderExtraFormFields();
+  renderViewTabs();
+  renderCurrentView();
+}
+
+/* ---------- upcoming ---------- */
+function renderUpcoming(){
+  const t0 = today0();
+  const list = tasks.map(t=>({...t, endD: endDateOf(t.start,t.dur)}))
+    .filter(t=> t.endD >= t0)
+    .sort((a,b)=> a.start.localeCompare(b.start))
+    .slice(0,8);
+  const el = document.getElementById('upcomingList');
+  if(list.length===0){ el.innerHTML = `<div class="empty-mini">目前沒有即將到來的工作。</div>`; return; }
+  el.innerHTML = list.map(t=>{
+    const s = parseDate(t.start);
+    const diffDays = Math.round((s - t0)/86400000);
+    let badge;
+    if(s<=t0 && t.endD>=t0) badge = `<span class="badge active">進行中</span>`;
+    else if(diffDays<=3) badge = `<span class="badge soon">${diffDays===0?'今天開始':diffDays+'天後開始'}</span>`;
+    else badge = `<span class="badge later">${diffDays}天後開始</span>`;
+    return `<div class="upcoming-row">
+      <span class="dot" style="background:${CATS[t.cat]};"></span>
+      <span class="upcoming-name">${escapeHtml(t.name)}</span>
+      <span class="upcoming-range mono">${t.start.replaceAll('-','/')} – ${fmtSlash(t.endD)}</span>
+      ${badge}
+    </div>`;
+  }).join('');
+}
+
+/* ---------- summary ---------- */
+function renderSummary(){
+  const card = document.getElementById('summaryCard');
+  if(tasks.length===0){ card.style.display='none'; return; }
+  card.style.display='block';
+  const totals = {}; let grand=0;
+  tasks.forEach(t=>{ totals[t.cat]=(totals[t.cat]||0)+Number(t.dur); grand+=Number(t.dur); });
+  document.getElementById('summaryTotal').textContent = `共 ${grand} 人工日 · ${tasks.length} 個項目`;
+  document.getElementById('summaryStack').innerHTML = Object.entries(totals).map(([cat,d])=>{
+    const pct=(d/grand*100).toFixed(1);
+    return `<div style="width:${pct}%;background:${CATS[cat]};" title="${cat} ${d}天"></div>`;
+  }).join('');
+  document.getElementById('summaryLegend').innerHTML = Object.entries(totals).map(([cat,d])=>
+    `<div class="item"><span class="dot" style="background:${CATS[cat]};"></span>${cat} · ${d}天</div>`).join('');
+}
+
+/* ---------- dynamic extra fields (form) ---------- */
+function renderExtraFormFields(){
+  const row = document.getElementById('extraFieldsRow');
+  const visible = fieldDefs.filter(f=>f.visible);
+  if(visible.length===0){ row.innerHTML=''; return; }
+  row.innerHTML = visible.map(f=>`
+    <div class="field">
+      <label>${escapeHtml(f.label)}</label>
+      <input type="${f.type==='date'?'date':'text'}" id="extra-${f.id}" data-field="${f.id}">
+    </div>`).join('');
+}
+
+/* ---------- field settings modal ---------- */
+const fieldModal = document.getElementById('fieldModalBackdrop');
+document.getElementById('fieldSettingsBtn').addEventListener('click', ()=>{ renderFieldModal(); fieldModal.classList.add('open'); });
+document.getElementById('closeFieldModalBtn').addEventListener('click', ()=> fieldModal.classList.remove('open'));
+
+/* ---------- layer settings modal ---------- */
+const layerModal = document.getElementById('layerModalBackdrop');
+document.getElementById('layerSettingsBtn').addEventListener('click', ()=>{ renderLayerModal(); layerModal.classList.add('open'); });
+document.getElementById('closeLayerModalBtn').addEventListener('click', ()=> layerModal.classList.remove('open'));
+
+function renderLayerModal(){
+  const labels = {show:'顯示', dim:'淡化', hide:'隱藏'};
+  document.getElementById('layerSettingsList').innerHTML = LAYERS.map(layer=>{
+    const mode = layerMode(layer);
+    const btns = ['show','dim','hide'].map(m=>
+      `<button data-layer="${layer}" data-mode="${m}" class="${mode===m?'active':''}">${labels[m]}</button>`
+    ).join('');
+    return `<div class="field-row"><div class="fname">${layer}</div><div class="layer-seg">${btns}</div></div>`;
+  }).join('');
+  document.querySelectorAll('#layerSettingsList [data-mode]').forEach(btn=>{
+    btn.addEventListener('click', async ()=>{
+      const layer = btn.getAttribute('data-layer');
+      const mode = btn.getAttribute('data-mode');
+      layerSettings[layer] = mode;
+      renderLayerModal();
+      renderCurrentView();
+      await saveProjectData();
+    });
+  });
+}
+
+function renderFieldModal(){
+  const predefined = fieldDefs.filter(f=>f.predefined);
+  const custom = fieldDefs.filter(f=>!f.predefined);
+  document.getElementById('predefinedFieldsList').innerHTML = predefined.map(f=>`
+    <div class="field-row">
+      <div><span class="fname">${escapeHtml(f.label)}</span><span class="ftype">日期</span></div>
+      <div class="switch ${f.visible?'on':''}" data-toggle="${f.id}"><div class="knob"></div></div>
+    </div>`).join('');
+  document.getElementById('customFieldsList').innerHTML = custom.map(f=>`
+    <div class="field-row">
+      <div><span class="fname">${escapeHtml(f.label)}</span><span class="ftype">${f.type==='date'?'日期':'文字'}</span></div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="switch ${f.visible?'on':''}" data-toggle="${f.id}"><div class="knob"></div></div>
+        <button class="remove-x" data-remove="${f.id}" title="刪除欄位">✕</button>
+      </div>
+    </div>`).join('');
+
+  document.querySelectorAll('[data-toggle]').forEach(el=>{
+    el.addEventListener('click', async ()=>{
+      const id = el.getAttribute('data-toggle');
+      const f = fieldDefs.find(x=>x.id===id);
+      f.visible = !f.visible;
+      renderFieldModal();
+      renderExtraFormFields();
+      renderCurrentView();
+      await saveProjectData();
+    });
+  });
+  document.querySelectorAll('[data-remove]').forEach(el=>{
+    el.addEventListener('click', async ()=>{
+      const id = el.getAttribute('data-remove');
+      if(!confirm('刪除此自訂欄位？已填入的資料也會一併移除。')) return;
+      fieldDefs = fieldDefs.filter(f=>f.id!==id);
+      tasks.forEach(t=>{ if(t.extra) delete t.extra[id]; });
+      renderFieldModal();
+      renderExtraFormFields();
+      renderCurrentView();
+      await saveProjectData();
+    });
+  });
+}
+
+document.getElementById('addCustomFieldBtn').addEventListener('click', async ()=>{
+  const labelInput = document.getElementById('newFieldLabel');
+  const label = labelInput.value.trim();
+  const type = document.getElementById('newFieldType').value;
+  if(!label) return;
+  fieldDefs.push({ id:'c'+Date.now()+Math.random().toString(36).slice(2,6), label, type, predefined:false, visible:true });
+  labelInput.value='';
+  renderFieldModal();
+  renderExtraFormFields();
+  renderCurrentView();
+  await saveProjectData();
+});
+
+/* ---------- holiday settings modal ---------- */
+const holidayModal = document.getElementById('holidayModalBackdrop');
+document.getElementById('holidaySettingsBtn').addEventListener('click', ()=>{ renderHolidayModal(); holidayModal.classList.add('open'); });
+document.getElementById('closeHolidayModalBtn').addEventListener('click', ()=> holidayModal.classList.remove('open'));
+
+function renderHolidayModal(){
+  document.getElementById('satSwitch').classList.toggle('on', weekendOff.sat);
+  document.getElementById('sunSwitch').classList.toggle('on', weekendOff.sun);
+  const sorted = [...holidays].sort((a,b)=>a.date.localeCompare(b.date));
+  document.getElementById('holidayList').innerHTML = sorted.map(h=>`
+    <div class="field-row">
+      <div><span class="fname mono">${h.date.replaceAll('-','/')}</span><span class="ftype">${escapeHtml(h.name)}</span></div>
+      <button class="remove-x" data-remove-holiday="${h.date}" title="刪除">✕</button>
+    </div>`).join('');
+  document.querySelectorAll('[data-remove-holiday]').forEach(el=>{
+    el.addEventListener('click', async ()=>{
+      const date = el.getAttribute('data-remove-holiday');
+      holidays = holidays.filter(h=>h.date!==date);
+      rebuildHolidaySet();
+      renderHolidayModal();
+      renderAll();
+      await saveHolidays();
+    });
+  });
+}
+
+document.getElementById('satSwitch').addEventListener('click', async ()=>{
+  weekendOff.sat = !weekendOff.sat;
+  renderHolidayModal();
+  renderAll();
+  await saveHolidays();
+});
+document.getElementById('sunSwitch').addEventListener('click', async ()=>{
+  weekendOff.sun = !weekendOff.sun;
+  renderHolidayModal();
+  renderAll();
+  await saveHolidays();
+});
+document.getElementById('addHolidayBtn').addEventListener('click', async ()=>{
+  const dateInput = document.getElementById('newHolidayDate');
+  const nameInput = document.getElementById('newHolidayName');
+  const date = dateInput.value;
+  const name = nameInput.value.trim();
+  if(!date || !name) return;
+  if(holidays.some(h=>h.date===date)){ alert('此日期已經在假日清單中。'); return; }
+  holidays.push({date, name});
+  rebuildHolidaySet();
+  dateInput.value=''; nameInput.value='';
+  renderHolidayModal();
+  renderAll();
+  await saveHolidays();
+});
+
+/* ---------- entry form add/edit (triggered by direct click, not form submit —
+   sandboxed preview iframes can silently block native form submission) ---------- */
+async function handleAddOrEditTask(){
+  try{
+    const cat = document.getElementById('f-cat').value;
+    const layer = document.getElementById('f-layer').value;
+    const nameInput = document.getElementById('f-name');
+    const startInput = document.getElementById('f-start');
+    const durInput = document.getElementById('f-dur');
+    const name = nameInput.value.trim();
+    const start = startInput.value;
+    const dur = durInput.value;
+    const note = document.getElementById('f-note').value.trim();
+
+    [nameInput, startInput, durInput].forEach(el=>el.classList.remove('invalid'));
+    const errorBox = document.getElementById('entryError');
+    const problems = [];
+    if(!name){ problems.push('請輸入項目名稱'); nameInput.classList.add('invalid'); }
+    if(!start){ problems.push('請選擇起始日期'); startInput.classList.add('invalid'); }
+    if(!dur || Number(dur)<1){ problems.push('工期至少要 1 個工作天'); durInput.classList.add('invalid'); }
+    if(problems.length){
+      errorBox.textContent = problems.join('、');
+      errorBox.style.display = 'block';
+      return;
+    }
+    errorBox.style.display = 'none';
+
+    const extra = {};
+    fieldDefs.filter(f=>f.visible).forEach(f=>{
+      const input = document.getElementById('extra-'+f.id);
+      if(input && input.value) extra[f.id] = input.value;
+    });
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+
+    let affectedTask;
+    if(editingId){
+      const idx = tasks.findIndex(t=>t.id===editingId);
+      if(idx>-1){ tasks[idx] = {...tasks[idx], cat, layer, name, start, dur, note, extra}; affectedTask = tasks[idx]; }
+      editingId = null;
+      submitBtn.textContent = '新增';
+    } else {
+      const newTask = { id:'t'+Date.now()+Math.random().toString(36).slice(2,7), cat, layer, name, start, dur, note, extra };
+      tasks.push(newTask);
+      affectedTask = newTask;
+    }
+    document.getElementById('entryForm').reset();
+    document.getElementById('f-cat').value = cat;
+    document.getElementById('f-dur').value = 3;
+    renderExtraFormFields();
+
+    renderAll();
+    await saveProjectData();
+    if(affectedTask) await pushTaskToGoogle(affectedTask);
+    submitBtn.disabled = false;
+  }catch(err){
+    const errorBox = document.getElementById('entryError');
+    errorBox.textContent = '發生錯誤，請再試一次（' + (err && err.message ? err.message : err) + '）';
+    errorBox.style.display = 'block';
+    const submitBtn = document.getElementById('submitBtn');
+    if(submitBtn) submitBtn.disabled = false;
+  }
+}
+
+document.getElementById('submitBtn').addEventListener('click', handleAddOrEditTask);
+document.getElementById('entryForm').addEventListener('keydown', (e)=>{
+  if(e.key==='Enter' && e.target.tagName!=='TEXTAREA'){
+    e.preventDefault();
+    handleAddOrEditTask();
+  }
+});
+document.getElementById('entryForm').addEventListener('submit', (e)=> e.preventDefault());
+
+window.startEdit = function(id){
+  const t = tasks.find(x=>x.id===id);
+  if(!t) return;
+  editingId = id;
+  document.getElementById('f-cat').value = t.cat;
+  document.getElementById('f-layer').value = t.layer || '工程安排';
+  document.getElementById('f-name').value = t.name;
+  document.getElementById('f-start').value = t.start;
+  document.getElementById('f-dur').value = t.dur;
+  document.getElementById('f-note').value = t.note||'';
+  renderExtraFormFields();
+  fieldDefs.filter(f=>f.visible).forEach(f=>{
+    const input = document.getElementById('extra-'+f.id);
+    if(input && t.extra && t.extra[f.id]) input.value = t.extra[f.id];
+  });
+  document.getElementById('submitBtn').textContent = '儲存修改';
+  document.getElementById('f-name').scrollIntoView({behavior:'smooth', block:'center'});
+};
+
+window.deleteTask = async function(id){
+  const removed = tasks.find(t=>t.id===id);
+  tasks = tasks.filter(t=>t.id!==id);
+  if(editingId===id){ editingId=null; document.getElementById('entryForm').reset(); document.getElementById('submitBtn').textContent='新增'; }
+  renderAll();
+  await saveProjectData();
+  if(removed) await deleteTaskFromGoogle(removed);
+};
+
+document.getElementById('clearAllBtn').addEventListener('click', async ()=>{
+  if(tasks.length===0) return;
+  if(!confirm('確定要清除所有已輸入的工作項目嗎？此動作無法復原。')) return;
+  tasks = [];
+  renderAll();
+  await saveProjectData();
+});
+
+/* ---------- view tabs ---------- */
+function renderViewTabs(){
+  document.querySelectorAll('.view-tab').forEach(btn=>{
+    btn.classList.toggle('active', btn.getAttribute('data-view')===currentView);
+  });
+}
+document.getElementById('viewTabs').addEventListener('click',(e)=>{
+  const btn = e.target.closest('.view-tab');
+  if(!btn) return;
+  currentView = btn.getAttribute('data-view');
+  renderViewTabs();
+  renderCurrentView();
+});
+renderViewTabs();
+
+function renderCurrentView(){
+  const el = document.getElementById('viewContent');
+  if(currentView==='list') el.innerHTML = viewListHtml();
+  else if(currentView==='month') el.innerHTML = viewMonthHtml();
+  else if(currentView==='gantt') el.innerHTML = viewGanttHtml();
+  else if(currentView==='year') el.innerHTML = viewYearHtml();
+  else if(currentView==='week3') el.innerHTML = viewWeek3Html();
+  attachViewNavHandlers();
+}
+
+/* ---------- LIST VIEW ---------- */
+function viewListHtml(){
+  if(tasks.length===0){
+    return `<div class="empty"><b>尚未輸入任何工作項目</b>從上方表單新增第一筆，作為工期規劃的起點。</div>`;
+  }
+  const visibleFields = fieldDefs.filter(f=>f.visible);
+  const sorted = [...tasks].sort((a,b)=>a.start.localeCompare(b.start));
+  const rangeStart = parseDate(sorted[0].start);
+  let rangeEnd = rangeStart;
+  sorted.forEach(t=>{ const e=endDateOf(t.start,t.dur); if(e>rangeEnd) rangeEnd=e; });
+  const totalSpan = Math.max(1,(rangeEnd-rangeStart)/86400000+1);
+
+  const extraHeaders = visibleFields.map(f=>`<th data-field="${f.id}">${escapeHtml(f.label)}</th>`).join('');
+  const rows = sorted.map(t=>{
+    const eDate = endDateOf(t.start,t.dur);
+    const offset = (parseDate(t.start)-rangeStart)/86400000;
+    const leftPct=(offset/totalSpan*100).toFixed(2);
+    const widthPct=Math.max(2,(Number(t.dur)/totalSpan*100)).toFixed(2);
+    const extraCells = visibleFields.map(f=>{
+      const v = (t.extra && t.extra[f.id]) ? t.extra[f.id] : '';
+      const display = f.type==='date' && v ? v.replaceAll('-','/') : v;
+      return `<td class="mono" data-field="${f.id}">${escapeHtml(display)||'—'}</td>`;
+    }).join('');
+    return `<tr>
+      <td><span class="cat-chip" style="background:color-mix(in srgb, ${CATS[t.cat]} 16%, white);color:${CATS[t.cat]};">${t.cat}</span></td>
+      <td>${escapeHtml(t.name)}</td>
+      <td class="layer-tag">${escapeHtml(t.layer || '工程安排')}</td>
+      <td class="mono">${t.start.replaceAll('-','/')}</td>
+      <td class="mono">${t.dur} 工作天</td>
+      <td class="mono">${fmtSlash(eDate)}</td>
+      ${extraCells}
+      <td class="note-cell">${escapeHtml(t.note||'')}</td>
+      <td class="timeline-cell"><div class="bar-track"><div class="bar-fill" style="left:${leftPct}%;width:${widthPct}%;background:${CATS[t.cat]};"></div></div></td>
+      <td class="no-print"><div class="row-actions"><button onclick="startEdit('${t.id}')" title="編輯">✎</button><button class="del" onclick="deleteTask('${t.id}')" title="刪除">✕</button></div></td>
+    </tr>`;
+  }).join('');
+
+  return `<table>
+    <thead><tr><th>分類</th><th>項目名稱</th><th>圖層</th><th>起始</th><th>工期</th><th>結束</th>${extraHeaders}<th data-note>備註</th><th>時程</th><th class="no-print"></th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+/* ---------- MONTH VIEW ---------- */
+function viewMonthHtml(){
+  const y = monthCursor.getFullYear(), m = monthCursor.getMonth();
+  const firstDay = new Date(y,m,1);
+  const gridStart = startOfWeek(firstDay);
+  const cells = [];
+  for(let i=0;i<42;i++) cells.push(addDays(gridStart,i));
+  const t0 = today0();
+
+  const label = `${y}年${m+1}月`;
+  const dow = DOW.map(d=>`<div class="cal-dow">${d}</div>`).join('');
+  const body = cells.map(day=>{
+    const inMonth = day.getMonth()===m;
+    const isToday = toKey(day)===toKey(t0);
+    const off = isHoliday(day);
+    const items = tasksOverlappingDay(day).filter(t=>layerMode(t.layer)!=='hide');
+    const chips = items.slice(0,3).map(t=>{
+      const dimStyle = layerMode(t.layer)==='dim' ? 'opacity:.4;' : '';
+      return `<div class="cal-chip" style="background:${CATS_RAW[t.cat]};${dimStyle}" title="${escapeHtml(t.name)}">${escapeHtml(t.name)}</div>`;
+    }).join('');
+    const more = items.length>3 ? `<div class="cal-more">+${items.length-3}</div>` : '';
+    return `<div class="cal-cell ${inMonth?'':'out'} ${isToday?'today':''} ${off?'off':''}">
+      <div class="cal-daynum">${day.getDate()}</div>${chips}${more}
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="view-nav">
+      <div class="label">${label}</div>
+      <div class="navbtns no-print"><button class="navbtn" data-nav="month-prev">‹</button><button class="navbtn" data-nav="month-today">今日</button><button class="navbtn" data-nav="month-next">›</button></div>
+    </div>
+    <div class="cal-grid">${dow}${body}</div>`;
+}
+
+/* ---------- WEEK3 VIEW ---------- */
+function viewWeek3Html(){
+  const days = []; for(let i=0;i<21;i++) days.push(addDays(weekCursor,i));
+  const t0 = today0();
+  const label = `${fmtSlash(days[0])} – ${fmtSlash(days[20])}`;
+  const dow = DOW.map(d=>`<div class="cal-dow">${d}</div>`).join('');
+  const body = days.map(day=>{
+    const isToday = toKey(day)===toKey(t0);
+    const off = isHoliday(day);
+    const items = tasksOverlappingDay(day).filter(t=>layerMode(t.layer)!=='hide');
+    const chips = items.slice(0,3).map(t=>{
+      const dimStyle = layerMode(t.layer)==='dim' ? 'opacity:.4;' : '';
+      return `<div class="cal-chip" style="background:${CATS_RAW[t.cat]};${dimStyle}" title="${escapeHtml(t.name)}">${escapeHtml(t.name)}</div>`;
+    }).join('');
+    const more = items.length>3 ? `<div class="cal-more">+${items.length-3}</div>` : '';
+    return `<div class="cal-cell ${isToday?'today':''} ${off?'off':''}"><div class="cal-daynum">${day.getMonth()+1}/${day.getDate()}</div>${chips}${more}</div>`;
+  }).join('');
+
+  return `
+    <div class="view-nav">
+      <div class="label">${label}</div>
+      <div class="navbtns no-print"><button class="navbtn" data-nav="week3-prev">‹</button><button class="navbtn" data-nav="week3-today">今日</button><button class="navbtn" data-nav="week3-next">›</button></div>
+    </div>
+    <div class="cal-grid">${dow}${body}</div>`;
+}
+
+/* ---------- GANTT VIEW ---------- */
+function viewGanttHtml(){
+  if(tasks.length===0) return `<div class="empty"><b>尚未輸入任何工作項目</b>新增項目後即可查看甘特圖。</div>`;
+  const sorted = [...tasks].sort((a,b)=>a.start.localeCompare(b.start));
+  const rangeStart = parseDate(sorted[0].start);
+  let rangeEnd = rangeStart;
+  sorted.forEach(t=>{ const e=endDateOf(t.start,t.dur); if(e>rangeEnd) rangeEnd=e; });
+  const totalSpan = Math.max(1,(rangeEnd-rangeStart)/86400000+1);
+  const t0 = today0();
+
+  // month boundary labels
+  const labels = [];
+  let cur = new Date(rangeStart.getFullYear(), rangeStart.getMonth(), 1);
+  if(cur < rangeStart) cur.setMonth(cur.getMonth()+1);
+  while(cur<=rangeEnd){
+    const pct = (cur-rangeStart)/86400000/totalSpan*100;
+    labels.push(`<span style="left:${pct}%;">${cur.getMonth()+1}月</span>`);
+    cur = new Date(cur.getFullYear(), cur.getMonth()+1, 1);
+  }
+  const todayPct = (t0>=rangeStart && t0<=rangeEnd) ? ((t0-rangeStart)/86400000/totalSpan*100) : null;
+
+  const rows = sorted.filter(t=>layerMode(t.layer)!=='hide').map(t=>{
+    const offset=(parseDate(t.start)-rangeStart)/86400000;
+    const leftPct=(offset/totalSpan*100).toFixed(2);
+    const widthPct=Math.max(1.5,(Number(t.dur)/totalSpan*100)).toFixed(2);
+    const rowStyle = layerMode(t.layer)==='dim' ? 'opacity:.4;' : '';
+    return `<div class="gantt-row" style="${rowStyle}">
+      <div class="gantt-label"><span class="dot" style="background:${CATS[t.cat]};"></span><span class="name">${escapeHtml(t.name)}</span></div>
+      <div class="gantt-track">
+        ${todayPct!==null?`<div class="gantt-today-line" style="left:${todayPct}%;"></div>`:''}
+        <div class="gantt-bar" style="left:${leftPct}%;width:${widthPct}%;background:${CATS[t.cat]};" title="${escapeHtml(t.name)} · ${t.dur}工作天"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<div class="gantt-wrap">
+    <div class="gantt-axis">${labels.join('')}</div>
+    ${rows}
+  </div>`;
+}
+
+/* ---------- YEAR VIEW ---------- */
+function viewYearHtml(){
+  const y = yearCursor;
+  const t0 = today0();
+  const monthsHeader = Array.from({length:12},(_,i)=>`<span>${i+1}月</span>`).join('');
+
+  const rows = Array.from({length:12},(_,mIdx)=>{
+    const mStart = new Date(y,mIdx,1);
+    const mEnd = new Date(y,mIdx,daysInMonth(y,mIdx));
+    const segs = tasks.filter(t=>layerMode(t.layer)!=='hide').map(t=>{
+      const s = parseDate(t.start), e = endDateOf(t.start,t.dur);
+      if(e<mStart || s>mEnd) return null;
+      const segStart = s<mStart ? mStart : s;
+      const segEnd = e>mEnd ? mEnd : e;
+      const dim = daysInMonth(y,mIdx);
+      const leftPct = ((segStart.getDate()-1)/dim*100).toFixed(2);
+      const widthPct = Math.max(2, ((segEnd.getDate()-segStart.getDate()+1)/dim*100)).toFixed(2);
+      const segStyle = layerMode(t.layer)==='dim' ? 'opacity:.4;' : '';
+      return `<div class="year-seg" style="left:${leftPct}%;width:${widthPct}%;background:${CATS_RAW[t.cat]};${segStyle}" title="${escapeHtml(t.name)}"></div>`;
+    }).filter(Boolean).join('');
+    const isCurMonth = t0.getFullYear()===y && t0.getMonth()===mIdx;
+    const todayLeft = isCurMonth ? ((t0.getDate()-1)/daysInMonth(y,mIdx)*100).toFixed(2) : null;
+    return `<div class="year-row">
+      <div class="year-label">${mIdx+1}月</div>
+      <div class="year-track">${segs}${todayLeft!==null?`<div class="gantt-today-line" style="left:${todayLeft}%;"></div>`:''}</div>
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="view-nav">
+      <div class="label">${y} 年</div>
+      <div class="navbtns no-print"><button class="navbtn" data-nav="year-prev">‹</button><button class="navbtn" data-nav="year-today">今年</button><button class="navbtn" data-nav="year-next">›</button></div>
+    </div>
+    <div class="year-wrap"><div class="year-months">${monthsHeader}</div>${rows}</div>`;
+}
+
+/* ---------- nav handlers ---------- */
+function attachViewNavHandlers(){
+  document.querySelectorAll('[data-nav]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const nav = btn.getAttribute('data-nav');
+      if(nav==='month-prev') monthCursor = new Date(monthCursor.getFullYear(), monthCursor.getMonth()-1, 1);
+      if(nav==='month-next') monthCursor = new Date(monthCursor.getFullYear(), monthCursor.getMonth()+1, 1);
+      if(nav==='month-today') monthCursor = startOfMonth(new Date());
+      if(nav==='week3-prev') weekCursor = addDays(weekCursor,-7);
+      if(nav==='week3-next') weekCursor = addDays(weekCursor,7);
+      if(nav==='week3-today') weekCursor = startOfWeek(new Date());
+      if(nav==='year-prev') yearCursor -= 1;
+      if(nav==='year-next') yearCursor += 1;
+      if(nav==='year-today') yearCursor = new Date().getFullYear();
+      renderCurrentView();
+    });
+  });
+}
+
+/* ---------- print modal ---------- */
+const printModal = document.getElementById('printModalBackdrop');
+const VIEW_LABELS = {list:'文字列表', month:'月檢視', gantt:'甘特圖', year:'全年簡圖', week3:'三週檢視'};
+
+document.getElementById('printBtn').addEventListener('click', ()=>{
+  document.getElementById('printViewLabel').textContent = `將匯出目前檢視：${VIEW_LABELS[currentView]}（如需其他檢視，請先切換上方分頁）`;
+  const visibleFields = fieldDefs.filter(f=>f.visible);
+  const container = document.getElementById('printFieldChecks');
+  container.innerHTML = visibleFields.map(f=>`
+    <div class="check-row"><input type="checkbox" class="pOptField" data-field="${f.id}" checked><label>包含「${escapeHtml(f.label)}」欄位</label></div>
+  `).join('');
+  printModal.classList.add('open');
+});
+document.getElementById('closePrintModalBtn').addEventListener('click', ()=> printModal.classList.remove('open'));
+
+document.getElementById('doPrintBtn').addEventListener('click', ()=>{
+  const includeSummary = document.getElementById('pOptSummary').checked;
+  const includeNote = document.getElementById('pOptNote').checked;
+  const includeUpcoming = document.getElementById('pOptUpcoming').checked;
+  const hiddenFields = Array.from(document.querySelectorAll('.pOptField')).filter(c=>!c.checked).map(c=>c.getAttribute('data-field'));
+
+  let css = '@media print {';
+  if(!includeSummary) css += ' .section-summary{display:none;}';
+  if(!includeUpcoming) css += ' .section-upcoming{display:none;}';
+  if(!includeNote) css += ' .note-cell, th[data-note]{display:none;}';
+  hiddenFields.forEach(id=>{ css += ` [data-field="${id}"]{display:none;}`; });
+  const landscapeViews = ['gantt','year','week3'];
+  css += ` @page{ size: A4 ${landscapeViews.includes(currentView)?'landscape':'portrait'}; margin:12mm; } }`;
+  document.getElementById('dynamicPrintStyle').textContent = css;
+
+  printModal.classList.remove('open');
+  setTimeout(()=> window.print(), 100);
+});
+
+/* ---------- OneDrive sign-in gate ---------- */
+let skippedOneDriveGate = false;
+function showOneDriveGate(){
+  const el = document.getElementById('oneDriveGate');
+  if(el) el.style.display = 'flex';
+}
+function hideOneDriveGate(){
+  const el = document.getElementById('oneDriveGate');
+  if(el) el.style.display = 'none';
+}
+
+document.getElementById('gateSignInBtn').addEventListener('click', async ()=>{
+  const clientIdInput = document.getElementById('gateClientIdInput');
+  const statusEl = document.getElementById('gateStatus');
+  oneDriveClientId = clientIdInput.value.trim() || oneDriveClientId;
+  if(!oneDriveClientId){ statusEl.textContent = '請先輸入用戶端識別碼。'; return; }
+  saveOneDriveClientIdLocal();
+  if(!window.msal){ statusEl.textContent = 'Microsoft 登入元件尚未載入，請確認網路連線後再試一次。'; return; }
+  let client;
+  try{ client = await ensureMsalInstance(); }
+  catch(e){ statusEl.textContent = '初始化失敗：' + (e && e.message ? e.message : e); return; }
+  if(!client){ statusEl.textContent = '初始化失敗，請確認識別碼是否正確。'; return; }
+  statusEl.textContent = '正在導向 Microsoft 登入…';
+  try{
+    await client.loginRedirect({ scopes:['Files.ReadWrite.AppFolder'] });
+  }catch(e){
+    statusEl.textContent = '登入失敗：' + (e && e.message ? e.message : e);
+  }
+});
+
+document.getElementById('gateSkipBtn').addEventListener('click', async ()=>{
+  skippedOneDriveGate = true;
+  hideOneDriveGate();
+  await loadHolidays();
+  await loadProjects();
+});
+
+/* ---------- init ---------- */
+(async function init(){
+  loadOneDriveClientId();
+  const gated = !!oneDriveClientId;
+  if(gated){
+    document.getElementById('gateClientIdInput').value = oneDriveClientId;
+    if(lastOneDriveError) document.getElementById('gateStatus').textContent = '上次登入返回時發生錯誤：' + lastOneDriveError;
+    showOneDriveGate();
+  }
+  const signedInViaRedirect = await handleOneDriveRedirect();
+  await loadGoogleConfig();
+  if(signedInViaRedirect){
+    hideOneDriveGate();
+  } else if(!gated){
+    hideOneDriveGate();
+    await loadHolidays();
+    await loadProjects();
+  }
+  // else: still gated — waiting for the user to sign in or click skip in the gate
+})();
+</script>
+</body>
+</html>
